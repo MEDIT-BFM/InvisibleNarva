@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterEntityController : MonoBehaviour
 {   
     public Transform thisHasImage;
-    public Transform nextEntity;    
+    public Transform nextEntity;
     public UnityEngine.Video.VideoClip videoClip;
     public AudioClip videoSound;
     public float StopDisplayAfterSeconds;
@@ -33,7 +33,7 @@ public class CharacterEntityController : MonoBehaviour
 
     private void Start()
     {
-        if (thisHasImage)        
+        if (thisHasImage)
             thisHasImage.gameObject.SetActive(true);
     }
 
