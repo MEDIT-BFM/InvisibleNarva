@@ -8,12 +8,12 @@ public class MapUI : MonoBehaviour
     public QuestUI questUIprefab;
     public TMPro.TMP_Text UIinfoText;
 
-	void Start () {
+    void Start () {
         if (map)
             Display(map);
-	}
-	
-	public virtual void Display(Map map)
+    }
+    
+    public virtual void Display(Map map)
     {
         this.map = map;
         Refresh();
