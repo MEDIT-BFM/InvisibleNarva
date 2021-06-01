@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class FeedbackEntityController : MonoBehaviour
-{
+public class FeedbackEntityController : MonoBehaviour {
     public bool isCorrectFeedback;
     public Transform quizEntity;
     public Transform quizPanel;
@@ -9,26 +8,21 @@ public class FeedbackEntityController : MonoBehaviour
 
     public static bool CorrectAnswer = false;
 
-    private void OnEnable()
-    {
-        if (isCorrectFeedback)
-        {
+    private void OnEnable() {
+        if (isCorrectFeedback) {
             CorrectAnswer = true;
             Destroy(quizEntity.gameObject, displayTime);
         }
-        else
-        {
-           Invoke("DisplayFeedback", displayTime);
+        else {
+            Invoke("DisplayFeedback", displayTime);
         }
     }
 
-    private void DisplayFeedback()
-    {
+    private void DisplayFeedback() {
         gameObject.SetActive(false);
     }
 
-    private void OnDestroy()
-    {
-        CorrectAnswer = false;        
+    private void OnDestroy() {
+        CorrectAnswer = false;
     }
 }

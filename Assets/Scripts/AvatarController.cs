@@ -2,8 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AvatarController : MonoBehaviour
-{
+public class AvatarController : MonoBehaviour {
     public SceneShifter sceneChange;
     public Image avatarButtonPanel;
     public Image AvatarSelectionPanel;
@@ -16,30 +15,23 @@ public class AvatarController : MonoBehaviour
 
     public static bool[] Avatar_isCompleted = new bool[4];
 
-    private void Update()
-    {
+    private void Update() {
         CheckToggleSelection();
-        for (int i = 0; i < DoneMark.Length; i++)
-        {
-            if (Avatar_isCompleted[i])
-            {
+        for (int i = 0; i < DoneMark.Length; i++) {
+            if (Avatar_isCompleted[i]) {
                 DoneMark[i].gameObject.SetActive(true);
             }
-            else
-            {
+            else {
                 DoneMark[i].gameObject.SetActive(false);
             }
         }
     }
 
-    private void CheckToggleSelection()
-    {
-        if (!avatarToggle[0].isOn && !avatarToggle[1].isOn && !avatarToggle[2].isOn && !avatarToggle[3].isOn)
-        {
+    private void CheckToggleSelection() {
+        if (!avatarToggle[0].isOn && !avatarToggle[1].isOn && !avatarToggle[2].isOn && !avatarToggle[3].isOn) {
             avatarButtonPanel.gameObject.SetActive(false);
         }
-        else
-        {
+        else {
             avatarButtonPanel.gameObject.SetActive(true);
         }
     }
@@ -56,23 +48,19 @@ public class AvatarController : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
         AvatarSelectionPanel.gameObject.SetActive(false);
-        if (avatarToggle[0].isOn)
-        {
+        if (avatarToggle[0].isOn) {
             FirstAvatarPanel.gameObject.SetActive(true);
             FirstAvatarPanel.GetComponent<Animator>().SetBool("IsBacked", false);
         }
-        if (avatarToggle[1].isOn)
-        {
+        if (avatarToggle[1].isOn) {
             SecondAvatarPanel.gameObject.SetActive(true);
             SecondAvatarPanel.GetComponent<Animator>().SetBool("IsBacked", false);
         }
-        if (avatarToggle[2].isOn)
-        {
+        if (avatarToggle[2].isOn) {
             ThirdAvatarPanel.gameObject.SetActive(true);
             ThirdAvatarPanel.GetComponent<Animator>().SetBool("IsBacked", false);
         }
-        if (avatarToggle[3].isOn)
-        {
+        if (avatarToggle[3].isOn) {
             ForthAvatarPanel.gameObject.SetActive(true);
             ForthAvatarPanel.GetComponent<Animator>().SetBool("IsBacked", false);
         }
@@ -80,8 +68,7 @@ public class AvatarController : MonoBehaviour
 
     IEnumerator SelectedAvatarReturn(int index) {
         yield return new WaitForSeconds(.5f);
-        switch (index)
-        {
+        switch (index) {
             case 1:
                 FirstAvatarPanel.gameObject.SetActive(false);
                 break;

@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CharacterEntityController : MonoBehaviour
-{   
+public class CharacterEntityController : MonoBehaviour {
     public Transform thisHasImage;
     public Transform nextEntity;
     public UnityEngine.Video.VideoClip videoClip;
@@ -12,54 +11,44 @@ public class CharacterEntityController : MonoBehaviour
     private UnityEngine.Video.VideoPlayer videoPlayer;
     private double displayTime;
 
-    private void Awake()
-    {
+    private void Awake() {
         videoPlayer = SoundManager.Instance.VideoPlayer;
-        if (videoSound != null)
-        {
+        if (videoSound != null) {
             displayTime = videoSound.length;
         }
-        if (videoClip)
-        {
+        if (videoClip) {
             videoPlayer.clip = videoClip;
             videoPlayer.targetTexture = GetComponent<UnityEngine.UI.RawImage>().texture as RenderTexture;
             videoPlayer.Prepare();
-        }        
-        if (nextEntity != null)
-        {
+        }
+        if (nextEntity != null) {
             nextEntity.gameObject.SetActive(false);
         }
     }
 
-    private void Start()
-    {
+    private void Start() {
         if (thisHasImage)
             thisHasImage.gameObject.SetActive(true);
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         StartCoroutine(PlayVideo());
     }
 
-    private IEnumerator PlayVideo()
-    {
+    private IEnumerator PlayVideo() {
         videoPlayer.Play();
-        if (videoSound != null)
-        {
+        if (videoSound != null) {
             SoundManager.Instance.PlayVideoSound(videoSound);
         }
-        if (GetComponent<FeedbackEntityController>() == null)
-        {
+        if (GetComponent<FeedbackEntityController>() == null) {
             Destroy(gameObject, (float)displayTime);
         }
         yield return new WaitForSeconds(StopDisplayAfterSeconds);
         VideoStoppedToPlay();
     }
-    private void OnDestroy()
-    {
-        if (nextEntity != null)
-        {
+
+    private void OnDestroy() {
+        if (nextEntity != null) {
             videoPlayer.Stop();
             SoundManager.Instance.PlayVideoSound(null);
             videoPlayer.clip = null;
@@ -68,7 +57,7 @@ public class CharacterEntityController : MonoBehaviour
         }
     }
 
-    private  void VideoStoppedToPlay() {
+    private void VideoStoppedToPlay() {
         Color color = new Color(1, 1, 1, 0);
         GetComponent<UnityEngine.UI.RawImage>().color = color;
         GetComponent<UnityEngine.UI.RawImage>().texture = null;
@@ -76,11 +65,9 @@ public class CharacterEntityController : MonoBehaviour
         videoPlayer.targetTexture = null;
     }
 
-    public void Skip()
-    {
+    public void Skip() {
         Destroy(gameObject);
-        if (GetComponent<FeedbackEntityController>())
-        {
+        if (GetComponent<FeedbackEntityController>()) {
             Destroy(gameObject.GetComponentInParent<QuizManager>().gameObject);
         }
     }

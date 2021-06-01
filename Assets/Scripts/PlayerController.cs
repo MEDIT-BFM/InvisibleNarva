@@ -4,17 +4,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public FixedJoystick joystick;
     public FixedJoystick lookstick;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float rotationSpeed = 2f;
 
-    private float speed = 2f;
-    private Vector3 velocity;
-    private CharacterController characterController;
+    private Transform _transform;
+    private CharacterController _characterController;
 
     private void Awake() {
-        characterController = GetComponent<CharacterController>();
+        _transform = transform;
+        _characterController = GetComponent<CharacterController>();
     }
 
-    private void Update() {
-        velocity = new Vector3(0, 0, joystick.Vertical);
-        characterController.SimpleMove(speed * velocity);
+    private void FixedUpdate() {
+        _characterController.SimpleMove(moveSpeed * joystick.Vertical * _transform.forward);
+        _transform.Rotate(rotationSpeed * lookstick.Direction);
     }
 }
