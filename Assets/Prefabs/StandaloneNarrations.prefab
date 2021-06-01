@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1797151244971624}
+  m_IsPrefabAsset: 1
+--- !u!1 &1434202287151808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4978581782284028}
+  - component: {fileID: 114657396502466898}
+  m_Layer: 0
+  m_Name: IntroductionSubtitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1797151244971624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4887155112001334}
+  m_Layer: 0
+  m_Name: StandaloneNarrations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4887155112001334
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797151244971624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4978581782284028}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4978581782284028
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434202287151808}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4887155112001334}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114657396502466898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434202287151808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64edb199807a0f4f94361f1483bcd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseNarrationList: 0
+  narrationList: {fileID: 0}
+  theNarration:
+    busyBehavior: 0
+    singleAudio_MultiSub: 0
+    mainAudio: {fileID: 8300000, guid: 9af18b6a1f3bf480b87b857b0b1abf64, type: 3}
+    phrases:
+    - audio: {fileID: 8300000, guid: c76790099883a47a18d9d295ff230114, type: 3}
+      text: 18th century Narva was a small, but vastly international town, where most
+        of the folk made money by trading.
+      duration: 7.92
+      drawAudio: 1
+      lastCalculatedHeight: 108
+      move: 0
+    - audio: {fileID: 8300000, guid: e8a9915ce3db247ba9b86a5d5954589e, type: 3}
+      text: Travellers loved to stop there before reaching Russia, because the city
+        was known for its cheerful citizens, who were seen even as too kind-hearted
+        for their own good!
+      duration: 10.464
+      drawAudio: 1
+      lastCalculatedHeight: 108
+      move: 0
+    - audio: {fileID: 8300000, guid: d0d2b60e9fb174d34bbba243d9243884, type: 3}
+      text: "Another thing that amazed the travellers was the famous Narva waterfall\u2026"
+      duration: 4.968
+      drawAudio: 1
+      lastCalculatedHeight: 108
+      move: 0
+    - audio: {fileID: 8300000, guid: a8369b2672d6146e8a9b557959640b49, type: 3}
+      text: By the Narva river there are many many manufactures and sawmills, that
+        flourish thanks to the river and large forests that surround the city, but
+        the waterfalls on the other hand make shipping for larger vessels quite difficult.
+      duration: 14.04
+      drawAudio: 1
+      lastCalculatedHeight: 108
+      move: 0
+    LoopAudioForDuration: 0
+    expanded: 1
+    lastCalculatedHeight: 520
+    useSmartSubs: 1
+  OnFailure: 0
+  OnSuccess: 0
+  ResetCooldown: 0
+  delayPlayingBy: 0
+  counter: {fileID: 0}
+  targetValue: 1
+  relation: 1
