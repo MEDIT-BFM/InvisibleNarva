@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
  //   public FixedJoystick joystick;
  //   public FixedJoystick lookstick;
 
-	//void Update () {
+    //void Update () {
  //       var fps = GetComponent<RigidbodyFirstPersonController>();
  //       if (joystick.gameObject.transform.parent.gameObject.activeInHierarchy)
  //       {            

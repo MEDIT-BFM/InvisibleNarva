@@ -38,7 +38,7 @@ public class UIElementDragger : MonoBehaviour {
 
     void Update ()
     {
-		if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             objectToDrag = GetDraggableTransformUnderMouse();
 
@@ -83,7 +83,7 @@ public class UIElementDragger : MonoBehaviour {
             StartCoroutine(CalculateDistance());
             Debug.Log(PuzzleChecked());
         }
-	}
+    }
 
     private GameObject GetObjectUnderMouse()
     {

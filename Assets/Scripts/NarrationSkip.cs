@@ -2,8 +2,8 @@
 
 public class NarrationSkip : MonoBehaviour {
    
-	public void Skip()
+    public void Skip()
     {
-        Narrate.NarrationManager.instance.isTouched = true;
+        //Narrate.NarrationManager.instance.isTouched = true;
     }
 }
