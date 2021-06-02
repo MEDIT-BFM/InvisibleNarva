@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67957f651254c7146af0eace5b4d90e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundSource: {fileID: 82517584209289932}
-  VideoSource: {fileID: 82215281556939826}
-  NarrationSource: {fileID: 0}
-  VideoPlayer: {fileID: 328902499375449268}
+  narrationSource: {fileID: 0}
+  backgroundSource: {fileID: 82215281556939826}
+  videoSource: {fileID: 82517584209289932}
+  videoPlayer: {fileID: 328902499375449268}
