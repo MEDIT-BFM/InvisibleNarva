@@ -2,14 +2,28 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
-public class SceneController : MonoBehaviour {
+public class SceneController : Singleton<SceneController> {
+    [SerializeField] private float transitionDuration = 1;
     [SerializeField] private Slider loadProgressSlider;
     [SerializeField] private GameObject loadProgressUIPanel;
+    [SerializeField] private Image transitionImage;
+
+    private void Start() {
+        transitionImage.color = Color.black;
+        DOTween.Sequence().Append(transitionImage.DOFade(0, transitionDuration)).OnComplete(() => transitionImage.gameObject.SetActive(false));
+    }
 
     public void ChangeScene(string sceneName) {
         var opr = SceneManager.LoadSceneAsync(sceneName);
         StartCoroutine(LoadSceneOpr(opr));
+    }
+
+    public void ChangeScene(string sceneName, float duration = 1) {
+        transitionImage.gameObject.SetActive(true);
+        float alpha = transitionImage.color.a == 0 ? 1 : 0;
+        DOTween.Sequence().Append(transitionImage.DOFade(alpha, duration)).OnComplete(() => ChangeScene(sceneName));
     }
 
     private IEnumerator LoadSceneOpr(AsyncOperation operation) {

@@ -2,9 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class IntroImageShifter : MonoBehaviour
-{
-    public SceneShifter sceneChange;
+public class IntroImageShifter : MonoBehaviour {
     public Transform introCanvas;
     public bool isTapped;
     public VideoClip[] videoClips;
@@ -12,65 +10,51 @@ public class IntroImageShifter : MonoBehaviour
     private int videoClipIndex;
     private VideoPlayer videoPlayer;
 
-    private void Awake()
-    {
+    private void Awake() {
         isTapped = false;
         videoClipIndex = 0;
         videoPlayer = GetComponent<VideoPlayer>();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         EventManager.OnEnd += ForwardNarration;
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         EventManager.OnEnd -= ForwardNarration;
     }
 
-    private void Update()
-    {
-        if (!videoPlayer.isPlaying && isTapped == true)
-        {
+    private void Update() {
+        if (!videoPlayer.isPlaying && isTapped == true) {
             ForwardNarration();
         }
     }
 
-    public void ForwardNarration()
-    {
-        if (videoPlayer.isPrepared)
-        {
-            for (int i = 0; i < videoClips.Length; i++)
-            {
-                if (videoPlayer.clip.name == videoClips[i].name)
-                {
+    public void ForwardNarration() {
+        if (videoPlayer.isPrepared) {
+            for (int i = 0; i < videoClips.Length; i++) {
+                if (videoPlayer.clip.name == videoClips[i].name) {
                     videoClipIndex = i;
                 }
             }
             videoClipIndex++;
-            if (videoClipIndex < videoClips.Length)
-            {
+            if (videoClipIndex < videoClips.Length) {
                 PlayVideo(videoClips[videoClipIndex]);
             }
-            else
-            {
-                sceneChange.FadeTransition();
-            }            
-        }        
+            else {
+                SceneController.Instance.ChangeScene("AvatarSelectionScene",1);
+            }
+        }
     }
 
-    void PlayVideo(VideoClip video)
-    {
+    void PlayVideo(VideoClip video) {
         videoPlayer.clip = video;
         videoPlayer.Play();
     }
 
-    private IEnumerator PressedAnimation(bool isStarted)
-    {
+    private IEnumerator PressedAnimation(bool isStarted) {
         yield return new WaitUntil(() => isStarted == true);
-        if (isStarted)
-        {
+        if (isStarted) {
             introCanvas.gameObject.SetActive(false);
             SoundManager.Instance.PlayVideoSound(null);
             SoundManager.Instance.PlayBackgroundSound(null);
@@ -79,8 +63,7 @@ public class IntroImageShifter : MonoBehaviour
         }
     }
 
-    public void StartNarrate(bool isStarted)
-    {
+    public void StartNarrate(bool isStarted) {
         StartCoroutine(PressedAnimation(isStarted));
     }
 }
