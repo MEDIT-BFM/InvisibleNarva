@@ -3,12 +3,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using System;
 
 public class SceneController : Singleton<SceneController> {
     [SerializeField] private float transitionDuration = 1;
     [SerializeField] private Slider loadProgressSlider;
     [SerializeField] private GameObject loadProgressUIPanel;
     [SerializeField] private Image transitionImage;
+
+   // public event Action OnSceneLoaded = delegate { };
+
+    //private void OnEnable() {
+    //    SceneManager.sceneLoaded += (scene, mode) => OnSceneLoaded?.Invoke();
+    //}
 
     private void Start() {
         transitionImage.color = Color.black;

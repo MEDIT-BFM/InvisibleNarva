@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f78c56a223e4147940d60d9afbbd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
-  InitialPlayerPosition: {fileID: 0}
+  InitialPlayerTransform: {fileID: 8297648139813056335, guid: 116ba2bfcb2b45942af9b9b04489ad26,
+    type: 3}
   QuestInfoText: fsd

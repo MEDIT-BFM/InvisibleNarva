@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour {
         _characterController = GetComponent<CharacterController>();
     }
 
+    private void OnEnable() {
+        var startPosition = QuestManager.Instance.SelectedQuest.InitialPlayerTransform;
+
+        _transform.position = startPosition.position;
+        _transform.rotation = startPosition.rotation;
+    }
+
     private void FixedUpdate() {
         _characterController.SimpleMove(moveSpeed * joystick.Vertical * _transform.forward);
         _transform.Rotate(rotationSpeed * lookstick.Direction);

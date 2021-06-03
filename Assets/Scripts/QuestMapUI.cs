@@ -10,7 +10,7 @@ public class QuestMapUI : MonoBehaviour {
 
     private QuestManager _questManager;
 
-    private void OnEnable() {
+    private void Start() {
         if (QuestManager.TryGetInstance(out QuestManager instance)) {
             _questManager = instance;
         }
@@ -28,7 +28,7 @@ public class QuestMapUI : MonoBehaviour {
         }
     }
 
-    private void OnDisable() {
+    private void OnDestroy() {
         enterButton.onClick.RemoveAllListeners();
     }
 }

@@ -9,17 +9,18 @@ public class QuestUI : MonoBehaviour {
     public Quest Quest { get => quest; }
 
     private Toggle _toggle;
-
-    public void Completed(Sprite completedImage) {
-        Quest.Image = completedImage;
-    }
+    private QuestManager _questManager;
 
     private void Awake() {
         _toggle = GetComponent<Toggle>();
     }
 
-    private void OnEnable() {
-        QuestManager.Instance.OnQuestCompleted += QuestCompletedHandler;
+    private void Start() {
+        if (QuestManager.TryGetInstance(out QuestManager instance)) {
+            _questManager = instance;
+        }
+
+        _questManager.OnQuestCompleted += QuestCompletedHandler;
         _toggle.onValueChanged.AddListener(UpdateInfoText);
     }
 
@@ -29,13 +30,12 @@ public class QuestUI : MonoBehaviour {
 
     private void UpdateInfoText(bool isOn) {
         if (isOn) {
-            QuestManager.Instance.HandleChancedMessage(Quest.QuestInfoText);
-            QuestManager.Instance.HandleUpdatedQuest(Quest);
+            _questManager.HandleUpdatedQuest(Quest);
         }
     }
 
-    private void OnDisable() {
-        QuestManager.Instance.OnQuestCompleted -= QuestCompletedHandler;
+    private void OnDestroy() {
+        _questManager.OnQuestCompleted -= QuestCompletedHandler;
         _toggle.onValueChanged.RemoveAllListeners();
     }
 }
