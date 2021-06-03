@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 90018368}
   - component: {fileID: 90018372}
   m_Layer: 5
-  m_Name: QuestMap
+  m_Name: QuestMapCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,7 +219,7 @@ RectTransform:
   - {fileID: 1554750954}
   - {fileID: 586482315}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -238,11 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69873e1f30402ca4e843f79818fdaa1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 114457193844010272, guid: a601d4a0f05996c47847ea01636a6972, type: 3}
-  content: {fileID: 988906449}
-  questUIprefab: {fileID: 114422761310341876, guid: f75814f67dd331c4a9bcd6ef32454809,
-    type: 3}
-  UIinfoText: {fileID: 1266085693}
+  infoText: {fileID: 1266085693}
+  enterButton: {fileID: 775681535}
+  toggleGroup: {fileID: 200955674}
+  selectionWarningMessage: Please select a location before entering world.
 --- !u!1 &151425174
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +382,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151425174}
   m_CullTransparentMesh: 0
+--- !u!1 &157544699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157544701}
+  - component: {fileID: 157544700}
+  m_Layer: 0
+  m_Name: '[QuestManager]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157544700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157544699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6688c6ea1faa342bfb858f1967ad13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &157544701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157544699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189135569
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,8 +599,62 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4853741884829345762, guid: d7b03905d5a361e49be048ebc2a8182a,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209318589881301290, guid: d7b03905d5a361e49be048ebc2a8182a,
+        type: 3}
+      propertyPath: QuestImage
+      value: 
+      objectReference: {fileID: 200955673}
+    - target: {fileID: 5209428025060487838, guid: d7b03905d5a361e49be048ebc2a8182a,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794775594593215389, guid: d7b03905d5a361e49be048ebc2a8182a,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146227311490666441, guid: d7b03905d5a361e49be048ebc2a8182a,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170943567969031520, guid: d7b03905d5a361e49be048ebc2a8182a,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7b03905d5a361e49be048ebc2a8182a, type: 3}
+--- !u!114 &200955673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5207766058900788190, guid: d7b03905d5a361e49be048ebc2a8182a,
+    type: 3}
+  m_PrefabInstance: {fileID: 200955672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &200955674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114213536713335214, guid: d7b03905d5a361e49be048ebc2a8182a,
+    type: 3}
+  m_PrefabInstance: {fileID: 200955672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &239682866
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +883,6 @@ GameObject:
   - component: {fileID: 775681537}
   - component: {fileID: 775681536}
   - component: {fileID: 775681535}
-  - component: {fileID: 775681534}
   m_Layer: 5
   m_Name: EnterButton
   m_TagString: Untagged
@@ -815,22 +910,6 @@ RectTransform:
   m_AnchoredPosition: {x: -125, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &775681534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775681532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07477872b25a9994c9c8ff857b38a23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QuestContent: {fileID: 988906449}
-  WarningText: {fileID: 1266085692}
-  InitialText: {fileID: 224105745503719880, guid: 00c85b59e1cb8447791b80c935e35340,
-    type: 3}
 --- !u!114 &775681535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,31 +953,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 775681536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 775681534}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: QuestSelected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 775681534}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: WarningMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Please select a place before entering world.
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &775681536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,7 +1068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &895269280
 GameObject:
@@ -1068,7 +1123,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1221,7 +1276,7 @@ PrefabInstance:
     - target: {fileID: 1385307061341315065, guid: 90a12c4ac9971684bae0d7b343160bf8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1385307061341315065, guid: 90a12c4ac9971684bae0d7b343160bf8,
         type: 3}
@@ -2558,7 +2613,7 @@ PrefabInstance:
     - target: {fileID: 1179564992556150792, guid: a13d12442bf80844cb131d44932179d2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1388855490532350528, guid: a13d12442bf80844cb131d44932179d2,
         type: 3}
@@ -2573,7 +2628,7 @@ PrefabInstance:
     - target: {fileID: 1388855490532350528, guid: a13d12442bf80844cb131d44932179d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1388855490532350528, guid: a13d12442bf80844cb131d44932179d2,
         type: 3}

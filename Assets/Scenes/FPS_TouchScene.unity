@@ -10472,7 +10472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1107845348212528, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1276799298911508, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d, type: 3}
       propertyPath: m_IsActive
@@ -10521,22 +10521,22 @@ PrefabInstance:
     - target: {fileID: 224262208047142572, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224262208047142572, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224262208047142572, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224536695593633940, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 445
       objectReference: {fileID: 0}
     - target: {fileID: 224543030816727808, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
@@ -10641,17 +10641,17 @@ PrefabInstance:
     - target: {fileID: 224933581139224448, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224933581139224448, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224933581139224448, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d6ab8e031a89f4c86fc4c4f2f4f07d, type: 3}
@@ -24712,6 +24712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoadProgressCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179564992556150792, guid: a13d12442bf80844cb131d44932179d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1388855490532350528, guid: a13d12442bf80844cb131d44932179d2,
         type: 3}

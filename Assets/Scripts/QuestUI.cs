@@ -2,33 +2,40 @@
 using UnityEngine.UI;
 
 public class QuestUI : MonoBehaviour {
-    public Quest quest;
-    public Image questImage;
-    public TMPro.TMP_Text UIquestInfoText;
+    [SerializeField] private Quest quest;
+    [SerializeField] private Image questImage;
+    [SerializeField] private Sprite completedQuestSprite;
 
-    private void Start()
-    {
-        if (quest)
-            Display(quest);
+    public Quest Quest { get => quest; }
+
+    private Toggle _toggle;
+
+    public void Completed(Sprite completedImage) {
+        Quest.Image = completedImage;
     }
 
-    public virtual void Display(Quest quest)
-    {
-        this.quest = quest;
-        questImage.sprite = quest.image;
-        UIquestInfoText = quest.questInfoText;
+    private void Awake() {
+        _toggle = GetComponent<Toggle>();
     }
 
-    public virtual void Completed(Sprite completedImage)
-    {
-        quest.image = completedImage;
+    private void OnEnable() {
+        QuestManager.Instance.OnQuestCompleted += QuestCompletedHandler;
+        _toggle.onValueChanged.AddListener(UpdateInfoText);
     }
 
-    public virtual void AssignInfoText()
-    {
-        if (GetComponent<Toggle>().isOn)
-        {
-            GetComponentInParent<MapUI>().UIinfoText.GetComponent<TMPro.TMP_Text>().text = UIquestInfoText.text;
-        }        
+    private void QuestCompletedHandler(Quest quest) {
+        questImage.sprite = completedQuestSprite;
+    }
+
+    private void UpdateInfoText(bool isOn) {
+        if (isOn) {
+            QuestManager.Instance.HandleChancedMessage(Quest.QuestInfoText);
+            QuestManager.Instance.HandleUpdatedQuest(Quest);
+        }
+    }
+
+    private void OnDisable() {
+        QuestManager.Instance.OnQuestCompleted -= QuestCompletedHandler;
+        _toggle.onValueChanged.RemoveAllListeners();
     }
 }

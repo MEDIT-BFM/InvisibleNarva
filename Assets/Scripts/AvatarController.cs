@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AvatarController : MonoBehaviour {
-    public SceneShifter sceneChange;
+    //public SceneShifter sceneChange;
     public Image avatarButtonPanel;
     public Image AvatarSelectionPanel;
     public Image FirstAvatarPanel;
@@ -88,8 +88,8 @@ public class AvatarController : MonoBehaviour {
         AvatarSelectionPanel.GetComponent<Animator>().SetBool("IsForwarded", false);
     }
 
-    public void SceneChange(string name) {
-        sceneChange.sceneName = name;
-        sceneChange.FadeTransition();
-    }
+    //public void SceneChange(string name) {
+    //    sceneChange.sceneName = name;
+    //    sceneChange.FadeTransition();
+    //}
 }
