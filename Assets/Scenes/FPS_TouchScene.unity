@@ -16711,7 +16711,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1706655309871236, guid: 16d46f11f8142412482a955f5b0bbc36, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114018668002441046, guid: 16d46f11f8142412482a955f5b0bbc36,
         type: 3}
@@ -16740,6 +16740,46 @@ PrefabInstance:
       propertyPath: entityNarrationArea
       value: 
       objectReference: {fileID: 2118219283}
+    - target: {fileID: 114032350221131276, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.lastCalculatedHeight
+      value: 456
+      objectReference: {fileID: 0}
+    - target: {fileID: 114032350221131276, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[0].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114032350221131276, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[1].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114032350221131276, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[2].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102345476813258, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.lastCalculatedHeight
+      value: 456
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102345476813258, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[0].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102345476813258, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[1].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102345476813258, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[2].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 114119190075743350, guid: 16d46f11f8142412482a955f5b0bbc36,
         type: 3}
       propertyPath: entity
@@ -16807,6 +16847,36 @@ PrefabInstance:
       propertyPath: congratulation
       value: 
       objectReference: {fileID: 465399514}
+    - target: {fileID: 114560291633389926, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.lastCalculatedHeight
+      value: 456
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560291633389926, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[0].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560291633389926, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[1].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560291633389926, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[2].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114587190544185878, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.lastCalculatedHeight
+      value: 216
+      objectReference: {fileID: 0}
+    - target: {fileID: 114587190544185878, guid: 16d46f11f8142412482a955f5b0bbc36,
+        type: 3}
+      propertyPath: theNarration.phrases.Array.data[0].lastCalculatedHeight
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 114645207691795646, guid: 16d46f11f8142412482a955f5b0bbc36,
         type: 3}
       propertyPath: theNarration.lastCalculatedHeight
@@ -24274,7 +24344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1686189072728598, guid: dab4fcb112fc84e51b8831f3d1507af8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4611326048249206, guid: dab4fcb112fc84e51b8831f3d1507af8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24356,6 +24426,11 @@ PrefabInstance:
       propertyPath: entities
       value: 
       objectReference: {fileID: 41685506}
+    - target: {fileID: 114814904987683816, guid: dab4fcb112fc84e51b8831f3d1507af8,
+        type: 3}
+      propertyPath: entity.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114198191467118708, guid: dab4fcb112fc84e51b8831f3d1507af8, type: 3}
     - {fileID: 114016428928291370, guid: dab4fcb112fc84e51b8831f3d1507af8, type: 3}
@@ -24398,6 +24473,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2118219277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2118219284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1229424081191032, guid: dab4fcb112fc84e51b8831f3d1507af8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2118219277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118219285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118219284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7536cecf7fc1246b638675ec7c75a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2123945376
 PrefabInstance:
   m_ObjectHideFlags: 0

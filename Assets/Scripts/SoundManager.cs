@@ -1,55 +1,44 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Video;
+﻿using UnityEngine;
+using DG.Tweening;
 
 public class SoundManager : Singleton<SoundManager> {
-    [SerializeField] private AudioSource narrationSource;
+    [SerializeField] private float audioFadeEndValue = 0.1f;
+    [SerializeField] private float audioFadeDuration = 0.5f;
     [SerializeField] private AudioSource backgroundSource;
-    [SerializeField] private AudioSource videoSource;
-    [SerializeField] private VideoPlayer videoPlayer;
 
-    public AudioSource NarrationSource { get => narrationSource; }
     public AudioSource BackgroundSource { get => backgroundSource; }
-    public AudioSource VideoSource { get => videoSource; }
-    public VideoPlayer VideoPlayer { get => videoPlayer; }
 
-    private void Update() {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 3) {
-            narrationSource = FindObjectOfType<Narrate.NarrationManager>().gameObject.GetComponent<AudioSource>();
-            if (NarrationSource.clip != null || VideoSource.clip != null) {
-                BackgroundSource.volume = 0.1f;
-                BackgroundSource.priority = 200;
-            }
-            else {
-                BackgroundSource.volume = 1f;
-                BackgroundSource.priority = 150;
-            }
-        }
+    public void PlayBackground(AudioClip clip) {
+        backgroundSource.clip = clip;
+        backgroundSource.Play();
     }
 
-    public void PlayBackgroundSound(AudioClip clip) {
-        BackgroundSource.clip = clip;
-        BackgroundSource.Play();
+    private void OnEnable() {
+        CharacterManager.OnCharacterPlay += CharacterPlayHandler;
+        CharacterManager.OnCharacterStop += CharacterStopHandler;
+        NarrationManager.OnNarrationStop += CharacterStopHandler;
+        NarrationManager.OnNarrationPlay += NarrationPlayHandler;
     }
 
-    public void PlayVideoSound(AudioClip clip) {
-        VideoSource.clip = clip;
-        VideoSource.Play();
+    private void NarrationPlayHandler(Speech speech) {
+        backgroundSource.DOFade(audioFadeEndValue, audioFadeDuration);
+        backgroundSource.priority = 200;
     }
 
-    public void StopAudioSources() {
-        BackgroundSource.clip = VideoSource.clip = null;
-        BackgroundSource.Stop();
-        VideoSource.Stop();
+    private void CharacterStopHandler() {
+        backgroundSource.DOFade(1, audioFadeDuration);
+        backgroundSource.priority = 150;
     }
 
-    public void MakeNullAfterPlay() {
-        StartCoroutine(IsPlaying());
+    private void CharacterPlayHandler() {
+        backgroundSource.DOFade(audioFadeEndValue, audioFadeDuration);
+        backgroundSource.priority = 200;
     }
 
-    private IEnumerator IsPlaying() {
-        yield return new WaitUntil(() => VideoSource.isPlaying == false);
-        PlayVideoSound(null);
-        StopCoroutine(IsPlaying());
+    private void OnDisable() {
+        CharacterManager.OnCharacterPlay -= CharacterPlayHandler;
+        CharacterManager.OnCharacterStop -= CharacterStopHandler;
+        NarrationManager.OnNarrationPlay -= NarrationPlayHandler;
+        NarrationManager.OnNarrationStop -= CharacterStopHandler;
     }
 }

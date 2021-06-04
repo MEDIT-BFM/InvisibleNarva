@@ -24,13 +24,13 @@ public class IntroductionUI : MonoBehaviour {
     private void Start() {
         SoundManager.Instance.BackgroundSource.loop = isLoop;
         DOTween.Sequence().SetDelay(delayTime).AppendCallback(() => {
-            SoundManager.Instance.PlayBackgroundSound(currentTrack);
+            SoundManager.Instance.PlayBackground(currentTrack);
         });
     }
 
     private void OnDisable() {
         skipButton.onClick.RemoveAllListeners();
-        SoundManager.Instance.StopAudioSources();
+        //SoundManager.Instance.StopAudioSources();
     }
 
     //public void PlayAudio(AudioClip audioClip) {

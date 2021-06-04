@@ -1,18 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class CharacterEntityController : MonoBehaviour {
-    public Transform thisHasImage;
+    //public Transform thisHasImage;
     public Transform nextEntity;
-    public UnityEngine.Video.VideoClip videoClip;
+    public VideoClip videoClip;
     public AudioClip videoSound;
     public float StopDisplayAfterSeconds;
 
-    private UnityEngine.Video.VideoPlayer videoPlayer;
+    private VideoPlayer videoPlayer;
     private double displayTime;
 
     private void Awake() {
-        videoPlayer = SoundManager.Instance.VideoPlayer;
+        videoPlayer = CharacterManager.Instance.VideoPlayer;
         if (videoSound != null) {
             displayTime = videoSound.length;
         }
@@ -26,31 +27,31 @@ public class CharacterEntityController : MonoBehaviour {
         }
     }
 
-    private void Start() {
-        if (thisHasImage)
-            thisHasImage.gameObject.SetActive(true);
-    }
+    //private void Start() {
+    //    if (thisHasImage)
+    //        thisHasImage.gameObject.SetActive(true);
+    //}
 
-    private void OnEnable() {
-        StartCoroutine(PlayVideo());
-    }
+    //private void OnEnable() {
+    //    StartCoroutine(PlayVideo());
+    //}
 
-    private IEnumerator PlayVideo() {
-        videoPlayer.Play();
-        if (videoSound != null) {
-            SoundManager.Instance.PlayVideoSound(videoSound);
-        }
-        if (GetComponent<FeedbackEntityController>() == null) {
-            Destroy(gameObject, (float)displayTime);
-        }
-        yield return new WaitForSeconds(StopDisplayAfterSeconds);
-        VideoStoppedToPlay();
-    }
+    //private IEnumerator PlayVideo() {
+    //    videoPlayer.Play();
+    //    if (videoSound != null) {
+    //        //SoundManager.Instance.PlayVideoSound(videoSound);
+    //    }
+    //    if (GetComponent<FeedbackEntityController>() == null) {
+    //        Destroy(gameObject, (float)displayTime);
+    //    }
+    //    yield return new WaitForSeconds(StopDisplayAfterSeconds);
+    //    VideoStoppedToPlay();
+    //}
 
     private void OnDestroy() {
         if (nextEntity != null) {
             videoPlayer.Stop();
-            SoundManager.Instance.PlayVideoSound(null);
+           // SoundManager.Instance.PlayVideoSound(null);
             videoPlayer.clip = null;
             videoPlayer.targetTexture = null;
             nextEntity.gameObject.SetActive(true);

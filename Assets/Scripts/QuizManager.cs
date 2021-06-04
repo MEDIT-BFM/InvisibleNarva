@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuizManager : MonoBehaviour {
+public class QuizManager : Singleton<QuizManager> {
+    [SerializeField] private List<Quiz> availableQuizzes;
+
+
     [Tooltip("An entity (images, characters etc.) that will be displayed after the current one. Leave empty if there is not any.")]
     [SerializeField] private Transform nextEntity;
     [SerializeField] private Transform quizPanel;
@@ -10,24 +14,42 @@ public class QuizManager : MonoBehaviour {
     [SerializeField] private Toggle[] Answers;
     [SerializeField] private Transform[] FeedbackPanels;
 
-    private bool isSelected = false;
+   // private bool isSelected = false;
 
-    private void Start() {
-        foreach (Toggle item in Answers) {
-            item.interactable = false;
+    public Dictionary<Quiz, bool> CheckList = new Dictionary<Quiz, bool>();
+
+    protected override void Awake() {
+        for (int i = 0; i < availableQuizzes.Count; i++) {
+            if (!CheckList.ContainsKey(availableQuizzes[i])) {
+                CheckList.Add(availableQuizzes[i], false);
+            }
         }
     }
-
-    private void Update() {
-        OptionController();
-        SelectionCheck(isSelected);
+    private void OnEnable() {
+        Quiz.OnQuizCompleted += QuizDoneHander;
     }
+
+    private void QuizDoneHander(Quiz quiz) {
+        CheckList[quiz] = true;
+        Debug.Log("Quiz Done: " + quiz.gameObject.name);
+    }
+
+    //private void Start() {
+    //    foreach (Toggle item in Answers) {
+    //        item.interactable = false;
+    //    }
+    //}
+
+    //private void Update() {
+    //    OptionController();
+    //    SelectionCheck(isSelected);
+    //}
 
     private void OptionController() {
         foreach (Toggle item in Answers) {
             if (areAllTrue()) {
                 if (item.isOn) {
-                    isSelected = true;
+                   // isSelected = true;
                 }
                 if (FeedbackEntityController.CorrectAnswer) {
                     //item.interactable = false;
@@ -66,8 +88,10 @@ public class QuizManager : MonoBehaviour {
         }
         return true;
     }
-
-    private void OnDestroy() {
+    private void OnDisable() {
+        Quiz.OnQuizCompleted -= QuizDoneHander;
+    }
+    protected override void OnDestroy() {
         if (nextEntity != null) {
             nextEntity.gameObject.SetActive(true);
         }

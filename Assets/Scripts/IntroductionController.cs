@@ -10,7 +10,7 @@ public class IntroductionController : MonoBehaviour {
 
     private void Start() {
         clips = new Queue<VideoClip>(videoClips);
-        videoPlayer = SoundManager.Instance.VideoPlayer;
+        videoPlayer = CharacterManager.Instance.VideoPlayer;
     }
 
     private void OnEnable() {
@@ -32,7 +32,7 @@ public class IntroductionController : MonoBehaviour {
     }
 
     public void PlayVideo() {
-        SoundManager.Instance.StopAudioSources();
+       // SoundManager.Instance.StopAudioSources();
 
         videoPlayer.clip = clips.Dequeue();
         videoPlayer.Play();

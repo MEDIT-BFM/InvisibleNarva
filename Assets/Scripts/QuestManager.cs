@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 public class QuestManager : Singleton<QuestManager> {
     public event Action<string> OnMessageChanged = delegate { };

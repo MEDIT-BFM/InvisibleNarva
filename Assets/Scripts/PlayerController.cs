@@ -2,8 +2,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour {
-    public FixedJoystick joystick;
-    public FixedJoystick lookstick;
+    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] private FixedJoystick lookstick;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float rotationSpeed = 2f;
 
