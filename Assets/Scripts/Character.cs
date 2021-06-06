@@ -13,10 +13,10 @@ public class Character : Entity {
 
     public override void Begin() {
         CharacterManager.Instance.PlayCharacter(this);
-        OnBegin?.Invoke();
+        TriggerBegin(this);
     }
 
     public override void End() {
-        OnEnd?.Invoke();
+        TriggerEnd(this);
     }
 }

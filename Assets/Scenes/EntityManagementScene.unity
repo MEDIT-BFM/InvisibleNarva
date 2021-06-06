@@ -618,24 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f731717315dd68429f12c4ae81f239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1111464742}
-        m_TargetAssemblyTypeName: Speech, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  initialDelay: 1
   voice: {fileID: 8300000, guid: b91f2afa40d3f0e4abf1b349d2af4324, type: 3}
   subtitle: dasdas dsa das das dasd
 --- !u!4 &751862011
@@ -829,24 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f731717315dd68429f12c4ae81f239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2120853453}
-        m_TargetAssemblyTypeName: Character, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  initialDelay: 0
   voice: {fileID: 8300000, guid: ab435a91b57c848e68dea12db0e92479, type: 3}
   subtitle: dasdas dsa das das dasd
 --- !u!4 &1075252626
@@ -976,24 +942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f731717315dd68429f12c4ae81f239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1075252625}
-        m_TargetAssemblyTypeName: Speech, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  initialDelay: 3
   voice: {fileID: 8300000, guid: a81600be9ca02436fa2ded028f0aa70c, type: 3}
   subtitle: dasdas dsa das das dasd
 --- !u!4 &1111464743
@@ -1073,7 +1022,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1403861190
 AudioSource:
@@ -1261,21 +1210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7536cecf7fc1246b638675ec7c75a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnPlayerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 751862010}
-        m_TargetAssemblyTypeName: Speech, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  entities:
+  - {fileID: 751862010}
+  - {fileID: 1111464742}
+  - {fileID: 1075252625}
+  - {fileID: 2120853453}
+  - {fileID: 1965372231}
 --- !u!135 &1480170829
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1556,12 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacf6686832a7dd4ea6179d3be627874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls: []
+  initialDelay: 3
   clip: {fileID: 32900000, guid: e20c35d5c1b5b462c9c9d72b2f52a105, type: 3}
   voice: {fileID: 8300000, guid: e15b5cc6b92bd49378b6b5291e58d02f, type: 3}
   targetTexture: {fileID: 843505881}
@@ -1577,7 +1512,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1980470236
 GameObject:
@@ -1800,24 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacf6686832a7dd4ea6179d3be627874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1965372231}
-        m_TargetAssemblyTypeName: Character, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  initialDelay: 0
   clip: {fileID: 32900000, guid: e20c35d5c1b5b462c9c9d72b2f52a105, type: 3}
   voice: {fileID: 8300000, guid: b5a49efee6ab34f15b324e5ccd463bbd, type: 3}
   targetTexture: {fileID: 1980470238}
@@ -1833,7 +1751,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364022913461157
 GameObject:
@@ -2026,7 +1944,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7391001639331412519
 GameObject:

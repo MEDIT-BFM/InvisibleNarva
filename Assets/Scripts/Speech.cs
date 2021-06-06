@@ -10,10 +10,10 @@ public class Speech : Entity {
 
     public override void Begin() {
         NarrationManager.Instance.Play(this);
-        OnBegin?.Invoke();
+        TriggerBegin(this);
     }
 
     public override void End() {
-        OnEnd?.Invoke();
+        TriggerEnd(this);
     }
 }

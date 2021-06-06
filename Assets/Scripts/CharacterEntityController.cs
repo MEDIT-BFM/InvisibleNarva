@@ -69,7 +69,7 @@ public class CharacterEntityController : MonoBehaviour {
     public void Skip() {
         Destroy(gameObject);
         if (GetComponent<FeedbackEntityController>()) {
-            Destroy(gameObject.GetComponentInParent<QuizManager>().gameObject);
+            Destroy(gameObject.GetComponentInParent<TaskManager>().gameObject);
         }
     }
 }
