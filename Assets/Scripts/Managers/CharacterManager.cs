@@ -29,7 +29,6 @@ public class CharacterManager : Singleton<CharacterManager> {
         StartCoroutine(PlayVideoUntilStop());
     }
 
-
     private IEnumerator PlayVideoUntilStop() {
         videoSource.clip = _current.Voice;
         videoPlayer.clip = _current.Clip;

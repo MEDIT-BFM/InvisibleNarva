@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 224691651415356732}
   - component: {fileID: 222890144301371708}
   - component: {fileID: 114529931284037998}
-  - component: {fileID: 57311251502755866}
+  - component: {fileID: 5461264843477190942}
   m_Layer: 5
   m_Name: Fixed Joystick
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &57311251502755866
+--- !u!114 &5461264843477190942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1179262553436252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Script: {fileID: 11500000, guid: b9fca4100a7477741b3973b4ff2c405f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handleRange: 1
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 114316388440454702}
   - component: {fileID: 114450001106188956}
   m_Layer: 5
-  m_Name: JoystickCanvas
+  m_Name: '[Canvas]Joystick'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 224868367449024576}
   - component: {fileID: 222019088842060166}
   - component: {fileID: 114681075214204278}
-  - component: {fileID: 5264420212533913884}
+  - component: {fileID: 1091553918774167246}
   m_Layer: 5
   m_Name: Look Stick
   m_TagString: Untagged
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5264420212533913884
+--- !u!114 &1091553918774167246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518895239068794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Script: {fileID: 11500000, guid: b9fca4100a7477741b3973b4ff2c405f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handleRange: 1

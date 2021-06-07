@@ -1,20 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
-public class AnswerData {
-    public int Id;
-    public bool IsCorrect;
-    public Entity Character;
-    public Entity Feedback;
-    [TextArea(2, 4)] public string Answer;
-}
-[System.Serializable]
-public class QuestionData {
-    public Entity Character;
-    [TextArea(2, 4)] public string Question;
-    public AnswerData[] Answers;
-}
 public class TaskManager : Singleton<TaskManager> {
     [SerializeField] private List<Task> availableTasks;
 
@@ -29,6 +16,18 @@ public class TaskManager : Singleton<TaskManager> {
     }
 
     private void OnEnable() {
-        Task.OnCompleted += (task) => CheckList[task] = true;
+        Task.OnCompleted += TaskCompletedHandler;
+    }
+
+    private void TaskCompletedHandler(Task task) {
+        CheckList[task] = true;
+
+        if (CheckList.Values.All(v => v == true)) {
+            //GAME OVER
+        }
+    }
+
+    private void OnDisable() {
+        Task.OnCompleted -= TaskCompletedHandler;
     }
 }

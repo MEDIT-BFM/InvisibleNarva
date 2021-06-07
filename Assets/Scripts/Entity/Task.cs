@@ -27,13 +27,6 @@ public class Task : MonoBehaviour {
         DOTween.Sequence().AppendCallback(() => _current.Begin()).SetDelay(_current.InitialDelay);
     }
 
-    private Entity GetNext() {
-        var entity = _entityQueue.Dequeue();
-        entity.OnEnd += EntityEndHandler;
-
-        return entity;
-    }
-
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag != "Player") {
             return;
@@ -42,5 +35,16 @@ public class Task : MonoBehaviour {
         _current = GetNext();
         _current.Begin();
         OnInitiated?.Invoke();
+    }
+
+    private Entity GetNext() {
+        if (_current != null) {
+            _current.OnEnd -= EntityEndHandler;
+        }
+
+        var entity = _entityQueue.Dequeue();
+        entity.OnEnd += EntityEndHandler;
+
+        return entity;
     }
 }

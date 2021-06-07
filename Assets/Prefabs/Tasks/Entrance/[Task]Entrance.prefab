@@ -57,4 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities: []
+  entities:
+  - {fileID: 7748922370953251171, guid: 0f88681162e28ec43938c4b54467607a, type: 3}
+  - {fileID: 1329468247808274592, guid: 1ae7cc17352225b418d944de23744823, type: 3}
+  - {fileID: 6829815671165996625, guid: 1538db79a452de44ea338f09dc19fe6f, type: 3}

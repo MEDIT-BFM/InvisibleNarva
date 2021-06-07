@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-public class NavigatePlayer : MonoBehaviour
-{
+public class NavigatePlayer : MonoBehaviour {
     public NavigationArrowController navigationArrow;
     public TMPro.TMP_Text displayText;
     public string navigationText;
@@ -11,14 +10,12 @@ public class NavigatePlayer : MonoBehaviour
     public Transform headingNarrationPoint;
     public float delayTime;
 
-    void Start()
-    {
+    void Start() {
         headingNarrationPoint.gameObject.SetActive(true);
-        StartCoroutine(DisplayUntil());        
+        StartCoroutine(DisplayUntil());
     }
 
-    private IEnumerator DisplayUntil()
-    {
+    private IEnumerator DisplayUntil() {
         yield return new WaitForSeconds(delayTime);
         navigationArrow.target = headingNarrationPoint;
         navigationArrow.gameObject.SetActive(true);
