@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: ArthurRinne
   entities:
   - {fileID: 2113825105210806618, guid: 5ddbe54634ded3643aa047315697a20f, type: 3}
   - {fileID: 1823643861073501221, guid: 41a9cdfe9390111488202eb4f86ae5fa, type: 3}

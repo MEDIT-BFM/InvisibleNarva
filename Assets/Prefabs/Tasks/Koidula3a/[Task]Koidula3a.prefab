@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: Bellerman
   entities:
   - {fileID: 1107265187539740469, guid: 235c8ff978d2dae40bcf77138faf4037, type: 3}
   - {fileID: 2887583432325646697, guid: 4c8997dba45660b43acb11b6079d7b59, type: 3}

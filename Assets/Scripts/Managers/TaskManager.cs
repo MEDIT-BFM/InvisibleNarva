@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager> {
+    public static event Action OnGameOver = delegate { };
+
     [SerializeField] private PlayerController player;
     [SerializeField] private List<Task> availableTasks;
 
@@ -27,7 +30,7 @@ public class TaskManager : Singleton<TaskManager> {
         CheckList[task] = true;
 
         if (CheckList.Values.All(v => v == true)) {
-            //GAME OVER
+            OnGameOver?.Invoke();
         }
     }
 

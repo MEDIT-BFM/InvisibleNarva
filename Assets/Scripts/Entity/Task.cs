@@ -4,10 +4,13 @@ using UnityEngine;
 using DG.Tweening;
 
 public class Task : MonoBehaviour {
-    public static event Action OnInitiated = delegate { };
+    public static event Action<Task> OnInitiated = delegate { };
     public static event Action<Task> OnCompleted = delegate { };
 
+    [SerializeField] private string id;
     [SerializeField] private List<Entity> entities;
+
+    public string ID { get => id; }
 
     private Entity _current;
     private Queue<Entity> _entityQueue;
@@ -34,7 +37,7 @@ public class Task : MonoBehaviour {
 
         _current = GetNext();
         _current.Begin();
-        OnInitiated?.Invoke();
+        OnInitiated?.Invoke(this);
     }
 
     private Entity GetNext() {

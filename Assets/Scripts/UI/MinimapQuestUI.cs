@@ -1,20 +1,32 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class MinimapIconUI : MonoBehaviour {
+public class MinimapQuestUI : MonoBehaviour {
+    public static event Action<Vector2> OnQuestInitiated = delegate { };
+
     private bool _isCompassOn;
     private Transform _transform;
     private PlayerController _player;
+
+    [SerializeField] private string questID;
 
     private void Awake() {
         _transform = transform;
     }
 
     private void OnEnable() {
+        Task.OnInitiated += TaskInitiatedHandler;
         MinimapUI.OnCompassChanged += CompassChangedHander;
     }
 
     private void Start() {
         _player = TaskManager.Instance.Player;
+    }
+
+    private void TaskInitiatedHandler(Task task) {
+        if (task.ID == questID) {
+            OnQuestInitiated?.Invoke(_transform.position);
+        }
     }
 
     private void CompassChangedHander(bool isOn) {
@@ -33,6 +45,7 @@ public class MinimapIconUI : MonoBehaviour {
     }
 
     private void OnDisable() {
+        Task.OnInitiated -= TaskInitiatedHandler;
         MinimapUI.OnCompassChanged -= CompassChangedHander;
     }
 }

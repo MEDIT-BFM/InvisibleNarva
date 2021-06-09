@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         minimapIcon.eulerAngles = new Vector3(minimapIcon.eulerAngles.x, _transform.eulerAngles.y, minimapIcon.eulerAngles.z);
     }
 
-    private void TaskInitiatedHandler() {
+    private void TaskInitiatedHandler(Task task) {
         moveStick.OnPointerUp(null);
         lookStick.OnPointerUp(null);
         moveStick.gameObject.SetActive(false);

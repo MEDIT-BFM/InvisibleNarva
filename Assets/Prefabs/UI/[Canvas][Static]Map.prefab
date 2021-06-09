@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 224961309606941650}
   - component: {fileID: 222747152407371986}
   - component: {fileID: 114429368907965490}
+  - component: {fileID: 626002574}
   m_Layer: 9
   m_Name: Koidula3a
   m_TagString: Untagged
@@ -150,6 +151,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &626002574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185520406968522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: Koidula3a
 --- !u!1 &1189550499323688
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +175,7 @@ GameObject:
   - component: {fileID: 224998559927853884}
   - component: {fileID: 222071359472989970}
   - component: {fileID: 114298214718719504}
+  - component: {fileID: 1602754012}
   m_Layer: 9
   m_Name: Bellerman
   m_TagString: Untagged
@@ -225,6 +240,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1602754012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189550499323688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: Bellerman
 --- !u!1 &1206440621202702
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +349,7 @@ GameObject:
   - component: {fileID: 224535608288333598}
   - component: {fileID: 222333628447182258}
   - component: {fileID: 114491956409155406}
+  - component: {fileID: 892430308}
   m_Layer: 9
   m_Name: ArthurRinne
   m_TagString: Untagged
@@ -385,6 +414,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &892430308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224324738301228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: ArthurRinne
 --- !u!1 &1402360041761100
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +438,7 @@ GameObject:
   - component: {fileID: 224881002074950634}
   - component: {fileID: 222152129203432638}
   - component: {fileID: 114627666101262748}
+  - component: {fileID: 462778575}
   m_Layer: 9
   m_Name: JaanLuts
   m_TagString: Untagged
@@ -460,6 +503,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &462778575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402360041761100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: JaanLuts
 --- !u!1 &1469782595270388
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224747327604466852}
   m_Layer: 9
-  m_Name: RenderImage
+  m_Name: QuestIcons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,6 +568,7 @@ GameObject:
   - component: {fileID: 224317535428776902}
   - component: {fileID: 222566301390088788}
   - component: {fileID: 114067677136005250}
+  - component: {fileID: 968534768}
   m_Layer: 9
   m_Name: PeterFirst
   m_TagString: Untagged
@@ -576,6 +633,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &968534768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675252008329750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: PeterFirst
 --- !u!1 &1710278415959682
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +732,7 @@ GameObject:
   - component: {fileID: 224039393495060650}
   - component: {fileID: 222558842528673092}
   - component: {fileID: 114726116451903452}
+  - component: {fileID: 374202309}
   m_Layer: 9
   m_Name: JaaniChurch
   m_TagString: Untagged
@@ -726,6 +797,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &374202309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753059955682444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: JaaniChurch
 --- !u!1 &1903335446244444
 GameObject:
   m_ObjectHideFlags: 0

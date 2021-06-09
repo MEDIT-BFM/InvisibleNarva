@@ -3,6 +3,12 @@ using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
 
+public class AnswerUI : MonoBehaviour {
+    [SerializeField] private TextMeshProUGUI text;
+
+
+}
+
 public class QuestionUI : MonoBehaviour {
     [SerializeField] private Button submit;
     [SerializeField] private TextMeshProUGUI question;

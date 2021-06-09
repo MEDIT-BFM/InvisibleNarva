@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: JaanLuts
   entities:
   - {fileID: 3186029285154905438, guid: 503d79ea4b8cfd44287970acc619dc81, type: 3}
   - {fileID: 2887583432325646697, guid: a61e408cbfd396f4e9c70caef8f55ce6, type: 3}
