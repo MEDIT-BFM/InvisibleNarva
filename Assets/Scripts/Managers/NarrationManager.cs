@@ -4,8 +4,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class NarrationManager : Singleton<NarrationManager> {
-    public static event Action<Speech> OnNarrationPlay = delegate { };
-    public static event Action OnNarrationStop = delegate { };
+    public static event Action<Speech> OnPlay = delegate { };
+    public static event Action OnStop = delegate { };
 
     private Speech _current;
     private AudioSource _audioSource;
@@ -27,7 +27,7 @@ public class NarrationManager : Singleton<NarrationManager> {
         _audioSource.clip = _current.Voice;
         _audioSource.Play();
 
-        OnNarrationPlay?.Invoke(_current);
+        OnPlay?.Invoke(_current);
 
         yield return null;
         yield return _waitUntilNarrationStop;
@@ -36,6 +36,6 @@ public class NarrationManager : Singleton<NarrationManager> {
         _audioSource.clip = null;
         _current.End();
 
-        OnNarrationStop?.Invoke();
+        OnStop?.Invoke();
     }
 }

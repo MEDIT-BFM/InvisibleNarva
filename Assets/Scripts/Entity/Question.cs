@@ -6,12 +6,7 @@ public class Question : Entity {
 
     [SerializeField] private QuestionData questionData;
 
-    public QuestionData Data { get; private set; }
-
-    protected override void Awake() {
-        base.Awake();
-        Data = questionData;
-    }
+    public QuestionData Data { get => questionData; }
 
     public override void Begin() {
         questionData.Character.Begin();

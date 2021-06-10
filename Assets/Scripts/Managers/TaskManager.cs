@@ -9,12 +9,11 @@ public class TaskManager : Singleton<TaskManager> {
     [SerializeField] private PlayerController player;
     [SerializeField] private List<Task> availableTasks;
 
-    public PlayerController Player { get; private set; }
+    public PlayerController Player { get => player; }
 
     public Dictionary<Task, bool> CheckList = new Dictionary<Task, bool>();
 
     private void Start() {
-        Player = player;
         for (int i = 0; i < availableTasks.Count; i++) {
             if (!CheckList.ContainsKey(availableTasks[i])) {
                 CheckList.Add(availableTasks[i], false);

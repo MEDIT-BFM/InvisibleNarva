@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class Character : Entity {
     [SerializeField] private VideoClip clip;
     [SerializeField] private AudioClip voice;
-    [SerializeField] private RawImage targetTexture;
+    [SerializeField] private Texture renderTexture;
+    [SerializeField] private RectTransform renderTransform;
 
     public VideoClip Clip { get => clip; }
     public AudioClip Voice { get => voice; }
-    public RawImage TargetTexture { get => targetTexture; }
+    public Texture RenderTexture { get => renderTexture; }
+    public RectTransform RenderTransform { get => renderTransform; }
 
     public override void Begin() {
         CharacterManager.Instance.PlayCharacter(this);

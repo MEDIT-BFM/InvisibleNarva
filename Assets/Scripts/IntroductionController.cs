@@ -18,7 +18,6 @@ public class IntroductionController : MonoBehaviour {
     }
 
     private void ForwardNarration() {
-        Debug.Log("NAME");
         if (videoPlayer.isPrepared) {
             var next = clips.Dequeue();
             if (next != null) {
@@ -26,7 +25,7 @@ public class IntroductionController : MonoBehaviour {
                 videoPlayer.Play();
             }
             else {
-                SceneController.Instance.ChangeScene("AvatarSelectionScene", 1);
+                SceneController.Instance.ChangeScene("QuestSelection", 0.5f);
             }
         }
     }

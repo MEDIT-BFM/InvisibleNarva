@@ -14,10 +14,10 @@ public class SoundManager : Singleton<SoundManager> {
     }
 
     private void OnEnable() {
-        CharacterManager.OnCharacterPlay += CharacterPlayHandler;
-        CharacterManager.OnCharacterStop += CharacterStopHandler;
-        NarrationManager.OnNarrationStop += CharacterStopHandler;
-        NarrationManager.OnNarrationPlay += NarrationPlayHandler;
+        CharacterManager.OnPlay += CharacterPlayHandler;
+        CharacterManager.OnStop += CharacterStopHandler;
+        NarrationManager.OnStop += CharacterStopHandler;
+        NarrationManager.OnPlay += NarrationPlayHandler;
     }
 
     private void NarrationPlayHandler(Speech speech) {
@@ -30,15 +30,15 @@ public class SoundManager : Singleton<SoundManager> {
         backgroundSource.priority = 150;
     }
 
-    private void CharacterPlayHandler() {
+    private void CharacterPlayHandler(Character character) {
         backgroundSource.DOFade(audioFadeEndValue, audioFadeDuration);
         backgroundSource.priority = 200;
     }
 
     private void OnDisable() {
-        CharacterManager.OnCharacterPlay -= CharacterPlayHandler;
-        CharacterManager.OnCharacterStop -= CharacterStopHandler;
-        NarrationManager.OnNarrationPlay -= NarrationPlayHandler;
-        NarrationManager.OnNarrationStop -= CharacterStopHandler;
+        CharacterManager.OnPlay -= CharacterPlayHandler;
+        CharacterManager.OnStop -= CharacterStopHandler;
+        NarrationManager.OnPlay -= NarrationPlayHandler;
+        NarrationManager.OnStop -= CharacterStopHandler;
     }
 }
