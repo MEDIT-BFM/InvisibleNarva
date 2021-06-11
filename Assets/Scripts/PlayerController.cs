@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float rotationSpeed = 2f;
 
+    public bool IsMoving { get; private set; }
     public Transform Transform { get => _transform; }
-    public float VelocityMagnitude { get; private set; }
 
     private float _xLook;
     private float _yLook;
@@ -19,19 +19,19 @@ public class PlayerController : MonoBehaviour {
     private void Awake() {
         _transform = transform;
         _characterController = GetComponent<CharacterController>();
-        VelocityMagnitude = _characterController.velocity.magnitude;
     }
 
     private void OnEnable() {
         Task.OnInitiated += TaskInitiatedHandler;
         Task.OnCompleted += TaskCompletedHandler;
+    }
 
+    private void Start() {
         var startPosition = QuestManager.Instance.SelectedQuest.InitialPlayerTransform;
-
         _transform.position = startPosition.position;
         _transform.rotation = startPosition.rotation;
-        minimapIcon.position = new Vector3(_transform.position.x, minimapIcon.position.y, _transform.position.z);
-        minimapIcon.eulerAngles = new Vector3(minimapIcon.eulerAngles.x, _transform.eulerAngles.y, minimapIcon.eulerAngles.z);
+        minimapIcon.position = _transform.position;
+        minimapIcon.rotation = Quaternion.Euler(0, _transform.rotation.eulerAngles.y, 0);
     }
 
     private void TaskInitiatedHandler(Task task) {
@@ -47,9 +47,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (moveStick.Vertical != 0) {
+        IsMoving = moveStick.Vertical != 0;
+
+        if (IsMoving) {
             _characterController.SimpleMove(moveSpeed * moveStick.Vertical * _transform.forward.normalized);
-            minimapIcon.position = new Vector3(_transform.position.x, minimapIcon.position.y, _transform.position.z);
+            minimapIcon.position = _transform.position;
         }
 
         if (lookStick.Direction.sqrMagnitude != 0) {
@@ -58,7 +60,7 @@ public class PlayerController : MonoBehaviour {
 
             var rotate = new Vector2(-_yLook, _xLook);
             _transform.eulerAngles = rotationSpeed * rotate;
-            minimapIcon.eulerAngles = new Vector3(minimapIcon.eulerAngles.x, _transform.eulerAngles.y, minimapIcon.eulerAngles.z - 90);
+            minimapIcon.rotation = Quaternion.Euler(0, _transform.rotation.eulerAngles.y, 0);
         }
     }
 

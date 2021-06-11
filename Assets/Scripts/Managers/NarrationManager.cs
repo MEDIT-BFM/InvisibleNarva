@@ -28,6 +28,7 @@ public class NarrationManager : Singleton<NarrationManager> {
         _audioSource.Play();
 
         OnPlay?.Invoke(_current);
+        SoundManager.Instance.FadeIn();
 
         yield return null;
         yield return _waitUntilNarrationStop;
@@ -37,5 +38,6 @@ public class NarrationManager : Singleton<NarrationManager> {
         _current.End();
 
         OnStop?.Invoke();
+        SoundManager.Instance.FadeOut();
     }
 }

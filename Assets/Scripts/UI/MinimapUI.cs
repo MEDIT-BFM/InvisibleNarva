@@ -26,6 +26,10 @@ public class MinimapUI : MonoBehaviour {
         zoomSlider.onValueChanged.AddListener(ZoomValueChangedHandler);
     }
 
+    private void Start() {
+        _mapCamTransform.position = new Vector3(player.Transform.position.x, _mapCamTransform.position.y, player.Transform.position.z);
+    }
+
     private void LateUpdate() {
         if (_isCompassOn) {
             var rotate = Quaternion.Euler(_mapCamTransform.rotation.eulerAngles.x, player.Transform.rotation.eulerAngles.y, _mapCamTransform.rotation.eulerAngles.z);
@@ -34,7 +38,7 @@ public class MinimapUI : MonoBehaviour {
             _dynamicCompass.rotation = Quaternion.Euler(0, 0, player.Transform.eulerAngles.y);
         }
 
-        if (player.VelocityMagnitude != 0) {
+        if (player.IsMoving) {
             var position = new Vector3(player.Transform.position.x, _mapCamTransform.position.y, player.Transform.position.z);
             _mapCamTransform.position = position;
         }

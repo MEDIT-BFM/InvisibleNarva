@@ -16,10 +16,8 @@ public class Minimap : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (player.VelocityMagnitude == 0) {
-            return;
+        if (player.IsMoving) {
+            _transform.position = _cameraPosition;
         }
-
-        _transform.position = _cameraPosition;
     }
 }

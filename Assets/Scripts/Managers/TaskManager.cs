@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager> {
     public static event Action OnGameOver = delegate { };
+    public static event Action<Task> OnNextPointed = delegate { };
 
     [SerializeField] private PlayerController player;
     [SerializeField] private List<Task> availableTasks;
 
     public PlayerController Player { get => player; }
-
     public Dictionary<Task, bool> CheckList = new Dictionary<Task, bool>();
 
     private void Start() {
@@ -31,6 +31,9 @@ public class TaskManager : Singleton<TaskManager> {
         if (CheckList.Values.All(v => v == true)) {
             OnGameOver?.Invoke();
         }
+
+        var next = CheckList.FindFirstKeyByValue(false);
+        OnNextPointed?.Invoke(next);
     }
 
     private void OnDisable() {

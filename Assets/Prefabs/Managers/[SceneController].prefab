@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd91c4508c88cf4b973a5949f007e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadProgressSlider: {fileID: 0}
+  transitionDuration: 0.5
   loadProgressUIPanel: {fileID: 0}
+  loadProgressSlider: {fileID: 0}
   transitionImage: {fileID: 0}

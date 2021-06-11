@@ -70,8 +70,8 @@ public class QuestionUI : MonoBehaviour {
     private void Show(TweenCallback callback = null) {
         gameObject.SetActive(true);
         DOTween.Sequence()
-           .Append(_transform.DOScale(1.1f, 0.25f))
-           .Append(_transform.DOScale(1, 0.25f))
+           .Append(_transform.DOScale(1.1f, 0.15f))
+           .Append(_transform.DOScale(1, 0.15f))
            .AppendCallback(() => {
                callback();
            });
@@ -79,9 +79,9 @@ public class QuestionUI : MonoBehaviour {
 
     private void Hide(TweenCallback callback = null) {
         DOTween.Sequence()
-            .Append(_transform.DOScale(1.1f, 0.15f))
-            .Join(_transform.DOShakeRotation(duration: 0.25f, strength: Vector2.one * 50, fadeOut: false))
-            .Append(_transform.DOScale(0, 0.25f))
+            //.Append(_transform.DOScale(1.1f, 0.15f))
+            .Append(_transform.DOShakeRotation(duration: 0.5f, strength: Vector2.one * 10, vibrato: 20, fadeOut: false))
+            //.Append(_transform.DOScale(0, 0.15f))
             .AppendCallback(() => {
                 gameObject.SetActive(false);
                 callback();

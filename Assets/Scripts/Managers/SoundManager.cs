@@ -1,44 +1,34 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof(AudioSource))]
 public class SoundManager : Singleton<SoundManager> {
-    [SerializeField] private float audioFadeEndValue = 0.1f;
-    [SerializeField] private float audioFadeDuration = 0.5f;
+    [SerializeField] private float audioFadeInValue = 0.1f;
+    [SerializeField] private float audioFadeInDuration = 0.5f;
     [SerializeField] private AudioSource backgroundSource;
 
-    public AudioSource BackgroundSource { get => backgroundSource; }
-
-    public void PlayBackground(AudioClip clip) {
+    public void Play(AudioClip clip, float delay = 0, bool loop = false) {
+        backgroundSource.loop = loop;
         backgroundSource.clip = clip;
-        backgroundSource.Play();
+        backgroundSource.Play((ulong)delay);
     }
 
-    private void OnEnable() {
-        CharacterManager.OnPlay += CharacterPlayHandler;
-        CharacterManager.OnStop += CharacterStopHandler;
-        NarrationManager.OnStop += CharacterStopHandler;
-        NarrationManager.OnPlay += NarrationPlayHandler;
-    }
-
-    private void NarrationPlayHandler(Speech speech) {
-        backgroundSource.DOFade(audioFadeEndValue, audioFadeDuration);
+    public void FadeIn() {
+        backgroundSource.DOFade(audioFadeInValue, audioFadeInDuration);
         backgroundSource.priority = 200;
     }
 
-    private void CharacterStopHandler() {
-        backgroundSource.DOFade(1, audioFadeDuration);
+    public void FadeOut() {
+        backgroundSource.DOFade(1, audioFadeInDuration);
         backgroundSource.priority = 150;
     }
 
-    private void CharacterPlayHandler(Character character) {
-        backgroundSource.DOFade(audioFadeEndValue, audioFadeDuration);
-        backgroundSource.priority = 200;
+    public void Stop() {
+        backgroundSource.clip = null;
+        backgroundSource.Stop();
     }
 
-    private void OnDisable() {
-        CharacterManager.OnPlay -= CharacterPlayHandler;
-        CharacterManager.OnStop -= CharacterStopHandler;
-        NarrationManager.OnPlay -= NarrationPlayHandler;
-        NarrationManager.OnStop -= CharacterStopHandler;
+    private void Start() {
+        DontDestroyOnLoad(this);
     }
 }

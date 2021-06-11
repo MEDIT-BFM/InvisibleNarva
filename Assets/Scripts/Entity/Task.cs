@@ -7,10 +7,10 @@ public class Task : MonoBehaviour {
     public static event Action<Task> OnInitiated = delegate { };
     public static event Action<Task> OnCompleted = delegate { };
 
-    [SerializeField] private string id;
+    [SerializeField] private MinimapIconUI minimapIcon;
     [SerializeField] private List<Entity> entities;
 
-    public string ID { get => id; }
+    public Vector2 GetMinimapLocation { get => minimapIcon.transform.position; }
 
     private Entity _current;
     private Queue<Entity> _entityQueue;

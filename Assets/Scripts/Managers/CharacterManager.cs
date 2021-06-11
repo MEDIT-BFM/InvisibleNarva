@@ -41,6 +41,7 @@ public class CharacterManager : Singleton<CharacterManager> {
         AudioSource.Play();
         VideoPlayer.Play();
         OnPlay?.Invoke(_current);
+        SoundManager.Instance.FadeIn();
 
         yield return null;
         yield return _waitUntilVideoStop;
@@ -52,5 +53,6 @@ public class CharacterManager : Singleton<CharacterManager> {
         AudioSource.clip = null;
         VideoPlayer.targetTexture = null;
         OnStop?.Invoke();
+        SoundManager.Instance.FadeOut();
     }
 }

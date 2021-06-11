@@ -40,4 +40,9 @@ public static class EnumerableExtensions {
             buffer[j] = buffer[i];
         }
     }
+
+    public static K FindFirstKeyByValue<K, V>(this Dictionary<K, V> dict, V val) {
+        return dict.FirstOrDefault(entry =>
+            EqualityComparer<V>.Default.Equals(entry.Value, val)).Key;
+    }
 }

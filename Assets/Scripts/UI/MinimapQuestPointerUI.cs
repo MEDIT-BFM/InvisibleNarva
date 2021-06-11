@@ -1,33 +1,27 @@
 using UnityEngine;
 
 public class MinimapQuestPointerUI : MonoBehaviour {
-
     [SerializeField] private Camera minimapCamera;
 
     private Vector3 _targetPosition;
     private RectTransform _rectTransform;
 
-    public void Hide() {
-        gameObject.SetActive(false);
-    }
-
-    public void Show(Vector3 target) {
-        gameObject.SetActive(true);
-        _targetPosition = target;
-    }
-
     private void Awake() {
         _rectTransform = GetComponent<RectTransform>();
-
         Hide();
     }
 
     private void OnEnable() {
-        MinimapQuestUI.OnQuestInitiated += QuestInitiatedHandler;
+        TaskManager.OnNextPointed += NextPointedHandler;
     }
 
-    private void QuestInitiatedHandler(Vector2 target) {
-        Show(target);
+    private void NextPointedHandler(Task task) {
+        if (task != null) {
+            Show(task.GetMinimapLocation);
+        }
+        else {
+            Hide();
+        }
     }
 
     private void Update() {
@@ -42,7 +36,16 @@ public class MinimapQuestPointerUI : MonoBehaviour {
         }
     }
 
+    private void Hide() {
+        gameObject.SetActive(false);
+    }
+
+    private void Show(Vector2 target) {
+        gameObject.SetActive(true);
+        _targetPosition = target;
+    }
+
     private void OnDisable() {
-        MinimapQuestUI.OnQuestInitiated -= QuestInitiatedHandler;
+        TaskManager.OnNextPointed -= NextPointedHandler;
     }
 }
