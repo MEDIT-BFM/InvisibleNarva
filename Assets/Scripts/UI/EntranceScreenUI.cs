@@ -11,8 +11,8 @@ public class EntranceScreenUI : MonoBehaviour {
 
     private void Start() {
         _tapSequence = DOTween.Sequence()
-            .Append(tapButtonLabel.DOScale(1.1f, 0.5f))
-            .Append(tapButtonLabel.DOScale(1f, 0.5f))
+            .Append(tapButtonLabel.DOScale(1.1f, 0.75f))
+            .Append(tapButtonLabel.DOScale(1f, 0.75f))
             .SetLoops(-1).SetAutoKill(false);
     }
 

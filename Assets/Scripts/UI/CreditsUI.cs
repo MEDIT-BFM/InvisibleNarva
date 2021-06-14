@@ -11,7 +11,7 @@ public class CreditsUI : MonoBehaviour {
 
     public void Initialize() {
         finishButton.gameObject.SetActive(false);
-        _creditsRect.gameObject.SetActive(true);
+        _creditsCanvasGroup.gameObject.SetActive(true);
 
         _creditsCanvasGroup.DOFade(1, 0.75f).OnComplete(() => {
             DOTween.Sequence()

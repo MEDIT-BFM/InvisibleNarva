@@ -725,6 +725,28 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 705328507}
+    - target: {fileID: 7044584513078806090, guid: 9ca86f573fa1d7d42b834b51687dc13e,
+        type: 3}
+      propertyPath: m_text
+      value: Press to begin...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044584513078806090, guid: 9ca86f573fa1d7d42b834b51687dc13e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 98.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044584513078806090, guid: 9ca86f573fa1d7d42b834b51687dc13e,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8660f51f53a078b43874096e0f26584e,
+        type: 2}
+    - target: {fileID: 7044584513078806090, guid: 9ca86f573fa1d7d42b834b51687dc13e,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7766933428582489387, guid: 8660f51f53a078b43874096e0f26584e,
+        type: 2}
     - target: {fileID: 7044584513167251992, guid: 9ca86f573fa1d7d42b834b51687dc13e,
         type: 3}
       propertyPath: introductionController
