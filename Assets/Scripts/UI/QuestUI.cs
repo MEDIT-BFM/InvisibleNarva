@@ -20,12 +20,11 @@ public class QuestUI : MonoBehaviour {
             _questManager = instance;
         }
 
-        _questManager.OnQuestCompleted += QuestCompletedHandler;
-        _toggle.onValueChanged.AddListener(UpdateInfoText);
-    }
+        if (quest.IsCompleted) {
+            questImage.sprite = completedQuestSprite;
+        }
 
-    private void QuestCompletedHandler(Quest quest) {
-        questImage.sprite = completedQuestSprite;
+        _toggle.onValueChanged.AddListener(UpdateInfoText);
     }
 
     private void UpdateInfoText(bool isOn) {
@@ -35,7 +34,6 @@ public class QuestUI : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        _questManager.OnQuestCompleted -= QuestCompletedHandler;
         _toggle.onValueChanged.RemoveAllListeners();
     }
 }

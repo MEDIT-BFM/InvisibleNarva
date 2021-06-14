@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 398854159651208811}
   - component: {fileID: 398854159651208813}
   m_Layer: 0
-  m_Name: '[IntroductionController]'
+  m_Name: '[Entrance]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95756ae2c44d4bc89bd3a4db53c59c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSoundDelay: 0
-  backgroundSound: {fileID: 0}
+  nextSceneName: QuestSelection
+  entranceClipDelay: 0.5
+  entranceClip: {fileID: 8300000, guid: a640baa76e5044858b4fe9d4b44c4f07, type: 3}
   videoClips:
   - {fileID: 32900000, guid: 2121fe720c8eab848b4f4d324366fcc0, type: 3}

@@ -46,5 +46,6 @@ MonoBehaviour:
   initialDelay: 0
   clip: {fileID: 32900000, guid: 548200bc6df7b416cb575b0a257e7f77, type: 3}
   voice: {fileID: 8300000, guid: e48bb148e4b8646a7b03d97db6ba2e8b, type: 3}
-  targetTexture: {fileID: 6968743466773398006, guid: 95d2524a36f35074686f107ce0e02646,
+  renderTexture: {fileID: 8400000, guid: a9c7c311008c64524bdbdea77d60d8b6, type: 2}
+  renderTransform: {fileID: 6669022780366860432, guid: e96433596aae9564a87cf1d627e778ac,
     type: 3}

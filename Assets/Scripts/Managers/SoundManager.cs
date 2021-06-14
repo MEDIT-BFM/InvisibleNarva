@@ -10,7 +10,7 @@ public class SoundManager : Singleton<SoundManager> {
     public void Play(AudioClip clip, float delay = 0, bool loop = false) {
         backgroundSource.loop = loop;
         backgroundSource.clip = clip;
-        backgroundSource.Play((ulong)delay);
+        backgroundSource.PlayDelayed(delay);
     }
 
     public void FadeIn() {

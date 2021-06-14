@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class SceneController : Singleton<SceneController> {
+    public bool DisplayLoading = true;
+
     [SerializeField] private float transitionDuration = 1;
     [SerializeField] private GameObject loadProgressUIPanel;
     [SerializeField] private Slider loadProgressSlider;
@@ -20,7 +22,12 @@ public class SceneController : Singleton<SceneController> {
         StartCoroutine(LoadSceneOpr(opr));
     }
 
-    public void ChangeScene(string sceneName, float duration = 1) {
+    public void ChangeScene(string sceneName, float duration = 0) {
+        if (duration == 0) {
+            ChangeScene(sceneName);
+            return;
+        }
+
         transitionImage.gameObject.SetActive(true);
         float alpha = transitionImage.color.a == 0 ? 1 : 0;
         DOTween.Sequence().Append(transitionImage.DOFade(alpha, duration)).OnComplete(() => {
@@ -33,8 +40,8 @@ public class SceneController : Singleton<SceneController> {
         if (loadProgressUIPanel == null || loadProgressSlider == null) {
             yield return null;
         }
-
         loadProgressUIPanel.SetActive(true);
+        loadProgressSlider.gameObject.SetActive(DisplayLoading);
 
         while (!operation.isDone) {
             var progress = Mathf.Clamp01(operation.progress / .9f);

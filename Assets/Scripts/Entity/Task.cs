@@ -22,6 +22,8 @@ public class Task : MonoBehaviour {
     private void EntityEndHandler(object sender, Entity.OnEndEventArgs e) {
         if (_entityQueue.Count <= 0) {
             OnCompleted?.Invoke(this);
+            minimapIcon.Complete();
+            gameObject.SetActive(false);
             _current.OnEnd -= EntityEndHandler;
             return;
         }

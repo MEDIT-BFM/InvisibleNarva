@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour {
     private void OnEnable() {
         Task.OnInitiated += TaskInitiatedHandler;
         Task.OnCompleted += TaskCompletedHandler;
+        TaskManager.OnGameOver += GameOverHandler;
+    }
+
+    private void GameOverHandler() {
+        TaskInitiatedHandler(null);
     }
 
     private void Start() {
@@ -67,5 +72,6 @@ public class PlayerController : MonoBehaviour {
     private void OnDisable() {
         Task.OnInitiated -= TaskInitiatedHandler;
         Task.OnCompleted -= TaskCompletedHandler;
+        TaskManager.OnGameOver -= GameOverHandler;
     }
 }

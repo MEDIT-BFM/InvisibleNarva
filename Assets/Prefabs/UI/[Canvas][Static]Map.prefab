@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questID: Koidula3a
+  completedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
 --- !u!1 &1189550499323688
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questID: Bellerman
+  completedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
 --- !u!1 &1206440621202702
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questID: ArthurRinne
+  completedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
 --- !u!1 &1402360041761100
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questID: JaanLuts
+  completedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
 --- !u!1 &1469782595270388
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questID: PeterFirst
+  completedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
 --- !u!1 &1710278415959682
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d49b538c7b4e4697eefc191fa67fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questID: JaaniChurch
+  completedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
 --- !u!1 &1903335446244444
 GameObject:
   m_ObjectHideFlags: 0
