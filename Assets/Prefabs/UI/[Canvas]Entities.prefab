@@ -462,6 +462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59026436962593404}
+  - component: {fileID: 3805123555416835867}
   - component: {fileID: 59026436962593378}
   m_Layer: 5
   m_Name: Narration
@@ -490,6 +491,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000038146973, y: -351}
   m_SizeDelta: {x: 1291.1038, y: 228.8151}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &3805123555416835867
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59026436962593405}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &59026436962593378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,8 +515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff16e9821c5d1c2438bebd907fb74986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 0.25
   content: {fileID: 59026436436313037}
   subtitle: {fileID: 59026437431385813}
+  canvasGroup: {fileID: 3805123555416835867}
 --- !u!1 &59026437189479170
 GameObject:
   m_ObjectHideFlags: 0

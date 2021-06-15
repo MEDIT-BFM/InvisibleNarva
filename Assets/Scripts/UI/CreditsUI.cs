@@ -5,6 +5,7 @@ public class CreditsUI : MonoBehaviour {
     [SerializeField] private RectTransform finishButton;
     [SerializeField] private CanvasGroup _creditsCanvasGroup;
     [SerializeField] private RectTransform _creditsRect;
+    [SerializeField] private Speech finalSpeech;
 
     private float _creditsHeight;
     private const float _speedMultiplier = 0.01f;
@@ -12,6 +13,7 @@ public class CreditsUI : MonoBehaviour {
     public void Initialize() {
         finishButton.gameObject.SetActive(false);
         _creditsCanvasGroup.gameObject.SetActive(true);
+        finalSpeech.Begin();
 
         _creditsCanvasGroup.DOFade(1, 0.75f).OnComplete(() => {
             DOTween.Sequence()

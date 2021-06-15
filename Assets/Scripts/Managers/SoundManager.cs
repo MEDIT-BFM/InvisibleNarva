@@ -8,6 +8,7 @@ public class SoundManager : Singleton<SoundManager> {
     [SerializeField] private AudioSource backgroundSource;
 
     public void Play(AudioClip clip, float delay = 0, bool loop = false) {
+        backgroundSource.DOFade(1, 0);
         backgroundSource.loop = loop;
         backgroundSource.clip = clip;
         backgroundSource.PlayDelayed(delay);
@@ -26,6 +27,13 @@ public class SoundManager : Singleton<SoundManager> {
     public void Stop() {
         backgroundSource.clip = null;
         backgroundSource.Stop();
+    }
+
+    public void Stop(float delay) {
+        backgroundSource.DOFade(0, delay).OnComplete(() => {
+            backgroundSource.clip = null;
+            backgroundSource.Stop();
+        });
     }
 
     private void Start() {

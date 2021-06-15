@@ -30,6 +30,7 @@ public class TaskManager : Singleton<TaskManager> {
 
         if (CheckList.Values.All(v => v == true)) {
             OnGameOver?.Invoke();
+            return;
         }
 
         var next = CheckList.FindFirstKeyByValue(false);

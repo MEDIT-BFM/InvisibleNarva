@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d731c36c804aced4daad25223b3f071e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDelay: 0
+  initialDelay: 0.1
   voice: {fileID: 8300000, guid: 51be7f138eb999b4b9445a42272d8472, type: 3}
   subtitle: "In the beginning of 1980s, the house was reconstructed into a tourist
     home, the size and position of the windows was changed and dormer windows were

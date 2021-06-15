@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 2
+  isLooping: 1
   clip: {fileID: 32900000, guid: 52697737b80ae4ee687826211848bf5d, type: 3}
   voice: {fileID: 8300000, guid: 27ec0bedec6980844bad39370a064332, type: 3}
   renderTexture: {fileID: 8400000, guid: a9c7c311008c64524bdbdea77d60d8b6, type: 2}

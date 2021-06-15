@@ -9,49 +9,49 @@ public class CharacterManager : Singleton<CharacterManager> {
     public static event Action<Character> OnPlay = delegate { };
     public static event Action OnStop = delegate { };
 
-    public AudioSource AudioSource { get; private set; }
-    public VideoPlayer VideoPlayer { get; private set; }
+    private AudioSource _audioSource;
+    private VideoPlayer _videoPlayer;
 
     private Character _current;
     private WaitUntil _waitUntilVideoStop;
     private WaitUntil _waitUntilVideoPrepared;
 
     private void Start() {
-        AudioSource = GetComponent<AudioSource>();
-        VideoPlayer = GetComponent<VideoPlayer>();
-        _waitUntilVideoStop = new WaitUntil(() => !AudioSource.isPlaying);
-        _waitUntilVideoPrepared = new WaitUntil(() => !VideoPlayer.isPrepared);
+        _audioSource = GetComponent<AudioSource>();
+        _videoPlayer = GetComponent<VideoPlayer>();
+        _waitUntilVideoStop = new WaitUntil(() => _audioSource.isPlaying == false);
+        _waitUntilVideoPrepared = new WaitUntil(() => _videoPlayer.isPrepared == false);
     }
 
-    public void PlayCharacter(Character character) {
+    public void Play(Character character) {
         _current = character;
-
-        StopCoroutine(PlayVideoUntilStop());
-        StartCoroutine(PlayVideoUntilStop());
+        _videoPlayer.isLooping = character.IsLooping;
+        StopCoroutine(PlayUntilStop());
+        StartCoroutine(PlayUntilStop());
     }
 
-    private IEnumerator PlayVideoUntilStop() {
-        AudioSource.clip = _current.Voice;
-        VideoPlayer.clip = _current.Clip;
-        VideoPlayer.targetTexture = _current.RenderTexture as RenderTexture;
-        VideoPlayer.Prepare();
+    private IEnumerator PlayUntilStop() {
+        _audioSource.clip = _current.Voice;
+        _videoPlayer.clip = _current.Clip;
+        _videoPlayer.targetTexture = _current.RenderTexture as RenderTexture;
+        _videoPlayer.Prepare();
 
         yield return _waitUntilVideoPrepared;
 
-        AudioSource.Play();
-        VideoPlayer.Play();
+        _audioSource.Play();
+        _videoPlayer.Play();
         OnPlay?.Invoke(_current);
         SoundManager.Instance.FadeIn();
 
         yield return null;
         yield return _waitUntilVideoStop;
-
+        Debug.Log("END");
         _current.End();
-        AudioSource.Stop();
-        VideoPlayer.Stop();
-        VideoPlayer.clip = null;
-        AudioSource.clip = null;
-        VideoPlayer.targetTexture = null;
+        _audioSource.Stop();
+        _videoPlayer.Stop();
+        _videoPlayer.clip = null;
+        _audioSource.clip = null;
+        _videoPlayer.targetTexture = null;
         OnStop?.Invoke();
         SoundManager.Instance.FadeOut();
     }

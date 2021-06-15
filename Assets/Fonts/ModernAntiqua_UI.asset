@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: ModernAntiqua_UI
   m_EditorClassIdentifier: 
-  hashCode: -171911591
+  hashCode: -1176579637
   material: {fileID: 1846971010392827001}
-  materialHashCode: 1405696217
+  materialHashCode: 995643915
   m_Version: 1.1.0
   m_SourceFontFileGUID: 6dea9023ce9296d41a2e048b3ae2916a
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 6dea9023ce9296d41a2e048b3ae2916a,
@@ -2543,7 +2543,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ModernAntiqua SDF Material
-  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

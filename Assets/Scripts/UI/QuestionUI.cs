@@ -56,7 +56,7 @@ public class QuestionUI : MonoBehaviour {
 
     private void QuestionBeginHandler(Question q) {
         _current = q;
-
+        Debug.Log("NAME: " + q);
         question.text = _current.Data.Question;
         Show();
 
