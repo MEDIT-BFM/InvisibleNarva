@@ -18,6 +18,7 @@ public class MinimapIconUI : MonoBehaviour {
 
     private void Awake() {
         _transform = transform;
+        _image = GetComponent<Image>();
     }
 
     private void OnEnable() {

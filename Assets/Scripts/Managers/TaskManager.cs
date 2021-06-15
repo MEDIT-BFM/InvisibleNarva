@@ -13,6 +13,12 @@ public class TaskManager : Singleton<TaskManager> {
     public PlayerController Player { get => player; }
     public Dictionary<Task, bool> CheckList = new Dictionary<Task, bool>();
 
+    private Task _current;
+
+    public void Skip() {
+        _current.Skip();
+    }
+
     private void Start() {
         for (int i = 0; i < availableTasks.Count; i++) {
             if (!CheckList.ContainsKey(availableTasks[i])) {
@@ -23,6 +29,11 @@ public class TaskManager : Singleton<TaskManager> {
 
     private void OnEnable() {
         Task.OnCompleted += TaskCompletedHandler;
+        Task.OnInitiated += TaskInitiatedHandler;
+    }
+
+    private void TaskInitiatedHandler(Task task) {
+        _current = task;
     }
 
     private void TaskCompletedHandler(Task task) {

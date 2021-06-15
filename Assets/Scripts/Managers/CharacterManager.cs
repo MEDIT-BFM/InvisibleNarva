@@ -45,7 +45,6 @@ public class CharacterManager : Singleton<CharacterManager> {
 
         yield return null;
         yield return _waitUntilVideoStop;
-        Debug.Log("END");
         _current.End();
         _audioSource.Stop();
         _videoPlayer.Stop();

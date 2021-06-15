@@ -15,31 +15,48 @@ public class Task : MonoBehaviour {
     private Entity _current;
     private Queue<Entity> _entityQueue;
 
+    public void Skip() {
+        Begin(GetNext());
+
+        if (_current == null) {
+            Complete();
+        }
+    }
+
     private void Awake() {
         _entityQueue = new Queue<Entity>(entities);
     }
 
     private void EntityEndHandler(object sender, Entity.OnEndEventArgs e) {
-        if (_entityQueue.Count <= 0) {
-            OnCompleted?.Invoke(this);
-            minimapIcon.Complete();
-            gameObject.SetActive(false);
-            _current.OnEnd -= EntityEndHandler;
-            return;
+        if (_entityQueue.Count > 0) {
+            Begin(GetNext());
         }
-
-        _current = GetNext();
-        DOTween.Sequence().AppendCallback(() => _current.Begin()).SetDelay(_current.InitialDelay);
+        else {
+            Complete();
+        }
     }
+
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag != "Player") {
             return;
         }
 
-        _current = GetNext();
-        _current.Begin();
+        Begin(GetNext());
         OnInitiated?.Invoke(this);
+    }
+
+    private void Begin(Entity entity) {
+        if (entity != null) {
+            DOTween.Sequence().AppendCallback(() => entity.Begin()).SetDelay(entity.InitialDelay);
+        }
+    }
+
+    private void Complete() {
+        minimapIcon.Complete();
+        gameObject.SetActive(false);
+        OnCompleted?.Invoke(this);
+        _current.OnEnd -= EntityEndHandler;
     }
 
     private Entity GetNext() {
@@ -47,9 +64,12 @@ public class Task : MonoBehaviour {
             _current.OnEnd -= EntityEndHandler;
         }
 
-        var entity = _entityQueue.Dequeue();
-        entity.OnEnd += EntityEndHandler;
+        if (_entityQueue.Count > 0) {
+            _current = _entityQueue.Dequeue();
+            _current.OnEnd += EntityEndHandler;
+            return _current;
+        }
 
-        return entity;
+        return null;
     }
 }
