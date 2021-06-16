@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 8f1b93394e4d34bfcaddb14a0c2cf8fb, type: 3}
   subtitle: Jaan Luts was arrested in June 1941 with other people in the leading
     positions of the Estonian Republic. He was sentenced to 10 years in corrective-labor

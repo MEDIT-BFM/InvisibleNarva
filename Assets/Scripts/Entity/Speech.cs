@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class Speech : Entity {
+    [SerializeField] private bool isSubtitleOn = true;
     [SerializeField] private AudioClip voice;
     [SerializeField, TextArea(2, 4)] private string subtitle;
 
@@ -9,7 +10,7 @@ public class Speech : Entity {
     public float GetDuration { get => voice.length; }
 
     public override void Begin() {
-        NarrationManager.Instance.Play(this);
+        NarrationManager.Instance.Play(this, isSubtitleOn);
         TriggerBegin(this);
     }
 

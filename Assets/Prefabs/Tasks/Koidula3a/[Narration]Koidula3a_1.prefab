@@ -44,5 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 65454d66e8b194b37b9f394d6072d3e9, type: 3}
   subtitle: 'This is the oldest school of Narva. Deutsches schulhaus! '

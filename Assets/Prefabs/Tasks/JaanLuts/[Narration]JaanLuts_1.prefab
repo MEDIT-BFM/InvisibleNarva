@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 007fd5ac13fc9417a84d835b5aab26bc, type: 3}
   subtitle: In 2015, the tunnel of the Victoria Bastion was opened to the public
     access as it was initially imagened and planned by Jaan Luts in the 1920s.

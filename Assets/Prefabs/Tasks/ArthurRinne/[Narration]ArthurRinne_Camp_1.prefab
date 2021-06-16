@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 7a303d0dae619cb459f1eb5b9956b2c1, type: 3}
   subtitle: In 1950, Artur Rinne was arrested and was deported for 25 years to a
     forced labor camp.

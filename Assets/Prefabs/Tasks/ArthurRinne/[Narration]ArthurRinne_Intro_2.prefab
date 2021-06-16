@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 1e121cb473bba6c4998e8fe3de1ac2b9, type: 3}
   subtitle: The contract was suddenly canceled. In a word, a short singer didn't
     suit for the opera.

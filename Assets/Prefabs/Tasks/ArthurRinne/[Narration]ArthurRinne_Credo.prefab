@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: ab58f60d26312461085ef23d21e8317d, type: 3}
   subtitle: "During the Soviet era, Artur Rinne continued to sing Estonian songs
     and his artistic credo was: \"When Picasso and G\xFCnther Reindorff did the art

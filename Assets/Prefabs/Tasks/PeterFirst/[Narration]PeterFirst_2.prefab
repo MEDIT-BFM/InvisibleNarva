@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 8b69ba17a85e78a4eb107766600c46f4, type: 3}
   subtitle: In order to provide the building with necessary representative exterior,
     a four-pillar portal was added, decorated by the wooden sculpture of Mars, the

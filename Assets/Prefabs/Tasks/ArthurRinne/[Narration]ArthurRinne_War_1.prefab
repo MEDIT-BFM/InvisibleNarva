@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 79d0131de6b7ade499abd4b3e3235566, type: 3}
   subtitle: In 1944, with the mobilization call, Artur Rinne joined to the Estonian
     Legion's General Inspectorate training courses for military correspondents.

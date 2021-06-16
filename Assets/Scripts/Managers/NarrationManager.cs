@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class NarrationManager : Singleton<NarrationManager> {
-    public static event Action<Speech> OnPlay = delegate { };
+    public static event Action<Speech, bool> OnPlay = delegate { };
     public static event Action OnStop = delegate { };
 
     private Speech _current;
@@ -17,17 +17,17 @@ public class NarrationManager : Singleton<NarrationManager> {
         _waitUntilNarrationStop = new WaitUntil(() => !_audioSource.isPlaying);
     }
 
-    public void Play(Speech speech) {
+    public void Play(Speech speech, bool showSubtitle) {
         _current = speech;
-        StopCoroutine(PlayNarrationUntilStop());
-        StartCoroutine(PlayNarrationUntilStop());
+        StopCoroutine(PlayNarrationUntilStop(showSubtitle));
+        StartCoroutine(PlayNarrationUntilStop(showSubtitle));
     }
 
-    private IEnumerator PlayNarrationUntilStop() {
+    private IEnumerator PlayNarrationUntilStop(bool showSubtitle) {
         _audioSource.clip = _current.Voice;
         _audioSource.Play();
 
-        OnPlay?.Invoke(_current);
+        OnPlay?.Invoke(_current, showSubtitle);
         SoundManager.Instance.FadeIn();
 
         yield return null;

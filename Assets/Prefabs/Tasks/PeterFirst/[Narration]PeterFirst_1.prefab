@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: d63ec4fe49ada0c4b9b15783744b48e3, type: 3}
   subtitle: House of Peter the Great. This building was constructed in 1684 as a
     dwelling house. On his frequent visits to Narva, the Emperor Peter the Great

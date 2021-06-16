@@ -5,34 +5,34 @@ using DG.Tweening;
 public class SoundManager : Singleton<SoundManager> {
     [SerializeField] private float audioFadeInValue = 0.1f;
     [SerializeField] private float audioFadeInDuration = 0.5f;
-    [SerializeField] private AudioSource backgroundSource;
+    [SerializeField] private AudioSource audioSource;
 
     public void Play(AudioClip clip, float delay = 0, bool loop = false) {
-        backgroundSource.DOFade(1, 0);
-        backgroundSource.loop = loop;
-        backgroundSource.clip = clip;
-        backgroundSource.PlayDelayed(delay);
+        audioSource.DOFade(1, 0);
+        audioSource.loop = loop;
+        audioSource.clip = clip;
+        audioSource.PlayDelayed(delay);
     }
 
     public void FadeIn() {
-        backgroundSource.DOFade(audioFadeInValue, audioFadeInDuration);
-        backgroundSource.priority = 200;
+        audioSource.DOFade(audioFadeInValue, audioFadeInDuration);
+        audioSource.priority = 200;
     }
 
     public void FadeOut() {
-        backgroundSource.DOFade(1, audioFadeInDuration);
-        backgroundSource.priority = 150;
+        audioSource.DOFade(1, audioFadeInDuration);
+        audioSource.priority = 150;
     }
 
     public void Stop() {
-        backgroundSource.clip = null;
-        backgroundSource.Stop();
+        audioSource.clip = null;
+        audioSource.Stop();
     }
 
     public void Stop(float delay) {
-        backgroundSource.DOFade(0, delay).OnComplete(() => {
-            backgroundSource.clip = null;
-            backgroundSource.Stop();
+        audioSource.DOFade(0, delay).OnComplete(() => {
+            audioSource.clip = null;
+            audioSource.Stop();
         });
     }
 

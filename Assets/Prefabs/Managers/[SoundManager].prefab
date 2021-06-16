@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd94039dc996724c9ccfe47ace524c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioFadeEndValue: 0.1
-  audioFadeDuration: 0.5
-  backgroundSource: {fileID: 82215281556939826}
+  audioFadeInValue: 0.1
+  audioFadeInDuration: 0.5
+  audioSource: {fileID: 82215281556939826}

@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0.1
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 51be7f138eb999b4b9445a42272d8472, type: 3}
   subtitle: "In the beginning of 1980s, the house was reconstructed into a tourist
     home, the size and position of the windows was changed and dormer windows were

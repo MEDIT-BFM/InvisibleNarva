@@ -33,7 +33,9 @@ public class CharacterManager : Singleton<CharacterManager> {
     private IEnumerator PlayUntilStop() {
         _audioSource.clip = _current.Voice;
         _videoPlayer.clip = _current.Clip;
-        _videoPlayer.targetTexture = _current.RenderTexture as RenderTexture;
+        _videoPlayer.targetTexture.Release();
+        _videoPlayer.targetTexture.width = (int)_current.Clip.width;
+        _videoPlayer.targetTexture.height = (int)_current.Clip.height;
         _videoPlayer.Prepare();
 
         yield return _waitUntilVideoPrepared;

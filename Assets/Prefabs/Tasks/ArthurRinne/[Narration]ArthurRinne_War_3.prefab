@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 362022c47b8514248ba23073ec738616, type: 3}
   subtitle: "\"What could have been heard and seen in Tallinn in the evening of the
     9th March\u201C  was a sentence: \"The murderer aircrafts are bombing to death

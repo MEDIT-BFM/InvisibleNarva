@@ -44,8 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isLooping: 0
   clip: {fileID: 32900000, guid: bfaa473359ab7be43b8db96c52e1cb5e, type: 3}
   voice: {fileID: 8300000, guid: efaa3a353f426f34e81bc90d09061d39, type: 3}
-  renderTexture: {fileID: 8400000, guid: e1d0a8708631dad43aa7e77eb7557f99, type: 2}
+  renderTexture: {fileID: 8400000, guid: 10c6622ecc4c1ee4292d4cfc893c8eec, type: 2}
   renderTransform: {fileID: 6669022780366860432, guid: 1272a5305bd787441b2db158ecf57dbf,
     type: 3}

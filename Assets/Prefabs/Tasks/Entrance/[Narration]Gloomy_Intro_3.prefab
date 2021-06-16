@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: daae41f704fc8d84985938fb6d49c651, type: 3}
   subtitle: They gladly enjoyed their beloved singers and groups give concerts in
     the pavilions such as Gloomy Garden.

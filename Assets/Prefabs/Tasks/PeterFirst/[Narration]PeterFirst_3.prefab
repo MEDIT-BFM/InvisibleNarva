@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: c8dd8335ab0b91248b4ed120537251ac, type: 3}
   subtitle: "A year after the Emperor\u2019s death, the Empress Catherine I gave
     the house to the town. A museum was established in the building to preserve objects

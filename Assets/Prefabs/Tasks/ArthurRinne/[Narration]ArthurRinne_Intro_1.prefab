@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDelay: 0
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: f04bfe26f134c4e4db3dc91fa597df3b, type: 3}
   subtitle: Artur Rinne was born in Narva in 1910. The son of a railwayman, was already
     a 19-year-old member of the Estonian opera and a soloist, but his musical theatre

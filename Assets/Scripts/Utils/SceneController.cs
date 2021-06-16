@@ -12,11 +12,6 @@ public class SceneController : Singleton<SceneController> {
     [SerializeField] private Slider loadProgressSlider;
     [SerializeField] private Image transitionImage;
 
-    private void Start() {
-        transitionImage.color = Color.black;
-        DOTween.Sequence().Append(transitionImage.DOFade(0, transitionDuration)).OnComplete(() => transitionImage.gameObject.SetActive(false));
-    }
-
     public void ChangeScene(string sceneName) {
         var opr = SceneManager.LoadSceneAsync(sceneName);
         StartCoroutine(LoadSceneOpr(opr));
@@ -34,6 +29,11 @@ public class SceneController : Singleton<SceneController> {
             transitionImage.gameObject.SetActive(false);
             ChangeScene(sceneName);
         });
+    }
+
+    private void Start() {
+        transitionImage.color = Color.black;
+        DOTween.Sequence().Append(transitionImage.DOFade(0, transitionDuration)).OnComplete(() => transitionImage.gameObject.SetActive(false));
     }
 
     private IEnumerator LoadSceneOpr(AsyncOperation operation) {
