@@ -43,6 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f78c56a223e4147940d60d9afbbd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCompleted: 0
   InitialPlayerTransform: {fileID: 6475129992715089870, guid: e1051e4c4143e05418c95a994d7c7062,
     type: 3}
-  QuestInfoText: 
+  QuestInfoText: '<style="Title">Jaani Church</style>
+
+
+    <align="center">1641
+    - 1944'

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f78c56a223e4147940d60d9afbbd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCompleted: 0
   InitialPlayerTransform: {fileID: 2026578087109348184, guid: 3b2fb335b1b617644a11292c4058a23a,
     type: 3}
-  QuestInfoText: dfhdfh
+  QuestInfoText: "<style=\"Title\">Koidula 3a</style>\n\n<align=\"center\">16.. -
+    \r\n<align=\"center\">Narva German School, Office of Prosecutor"

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f78c56a223e4147940d60d9afbbd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCompleted: 0
   InitialPlayerTransform: {fileID: 6449130287524016953, guid: 82901e998b581f141910908c98fffad7,
     type: 3}
-  QuestInfoText: fsdf
+  QuestInfoText: "<style=\"Title\">Gloomy Garden</style>\n\n<align=\"center\">Artur
+    Rinne \r\n<align=\"center\">1910 - 1984\r\n<align=\"center\">Estonian opera singer"

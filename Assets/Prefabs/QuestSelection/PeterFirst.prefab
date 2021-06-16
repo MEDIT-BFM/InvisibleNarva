@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f78c56a223e4147940d60d9afbbd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCompleted: 0
   InitialPlayerTransform: {fileID: 9199320370046961893, guid: e4a11aa4ea0b8d64fa2b2dec1008562e,
     type: 3}
-  QuestInfoText: 
+  QuestInfoText: "<style=\"Title\">House of Peter the Great\r</style>\n\n<align=\"center\">1684-1944"

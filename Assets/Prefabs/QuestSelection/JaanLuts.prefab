@@ -43,6 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f78c56a223e4147940d60d9afbbd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCompleted: 0
   InitialPlayerTransform: {fileID: 6225830781502942491, guid: 6dbc7cdd208d36b4da4b8b5ee206f0ad,
     type: 3}
-  QuestInfoText: 
+  QuestInfoText: '<style="Title">Jaan Luts</style>
+
+
+    <align="center">1884 - 1943
+
+    <align="center">The
+    Mayor of Narva '
