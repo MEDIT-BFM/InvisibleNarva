@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
-using System;
 using System.Collections;
 
 public class QuestionUI : MonoBehaviour {
+    [SerializeField] private Button skip;
     [SerializeField] private Button submit;
     [SerializeField] private TextMeshProUGUI question;
     [SerializeField] private AnswerUI[] answers;
@@ -29,13 +29,40 @@ public class QuestionUI : MonoBehaviour {
         }
     }
 
-    public void Submit() {
-        _selected.Feedback.OnEnd += FeedbackEnd;
+    private void Start() {
+        _transform = transform;
+        Question.OnQuestionBegin += QuestionBeginHandler;
+        submit.onClick.AddListener(Submit);
+        skip.onClick.AddListener(() => {
+            submit.interactable = false;
+            gameObject.SetActive(false);
+            TaskManager.Instance.Skip();
+        });
 
-        Hide(() => _selected.Feedback.Begin());
+        gameObject.SetActive(false);
     }
 
-    private void FeedbackEnd(object sender, Entity.OnEndEventArgs e) {
+    private void QuestionBeginHandler(Question q) {
+        _current = q;
+        var questionCharacter = _current.Data.Character;
+        question.text = _current.Data.Question;
+        skip.gameObject.SetActive(false);
+        submit.gameObject.SetActive(false);
+        Show(questionCharacter.Begin);
+        questionCharacter.OnEnd += (sender) => StartCoroutine(ReadAnswerCor());
+
+        for (int j = 0; j < answers.Length; j++) {
+            answers[j].Hide();
+        }
+    }
+
+    private void Submit() {
+        _selected.Feedback.OnEnd += FeedbackEnd;
+
+        Hide(_selected.Feedback.Begin);
+    }
+
+    private void FeedbackEnd(object sender) {
         if (!_selected.IsCorrect) {
             Show(() => submit.interactable = true);
         }
@@ -45,41 +72,6 @@ public class QuestionUI : MonoBehaviour {
 
         _selected.Feedback.OnEnd -= FeedbackEnd;
     }
-
-    private void OnEnable() {
-        submit.interactable = false;
-    }
-
-    private void Start() {
-        _transform = transform;
-        Question.OnQuestionBegin += QuestionBeginHandler;
-        gameObject.SetActive(false);
-    }
-
-    private void QuestionBeginHandler(Question q) {
-        _current = q;
-
-        for (int j = 0; j < answers.Length; j++) {
-            answers[j].Hide();
-        }
-
-        question.text = _current.Data.Question;
-        _current.Data.Character.OnEnd += (sender, e) => StartCoroutine(ReadAnswerCor());
-        Show(() => _current.Data.Character.Begin());
-    }
-
-    private IEnumerator ReadAnswerCor() {
-        var a = _current.Data.Answers;
-
-        for (int i = 0; i < a.Length; i++) {
-            a[i].Character.Begin();
-            answers[i].Display(a[i].Answer);
-            yield return a[i].Character.WaitUntilEnd;
-        }
-
-        yield return null;
-    }
-
 
     private void Show(TweenCallback callback = null) {
         gameObject.SetActive(true);
@@ -101,7 +93,24 @@ public class QuestionUI : MonoBehaviour {
             });
     }
 
+    private IEnumerator ReadAnswerCor() {
+        int count = 0;
+        var a = _current.Data.Answers;
+
+        do {
+            a[count].Character.Begin();
+            answers[count].Display(a[count].Answer);
+            yield return new WaitUntil(() => a[count].Character.IsPlaying == false);
+            count++;
+        } while (count < a.Length);
+
+        skip.gameObject.SetActive(true);
+        submit.gameObject.SetActive(true);
+    }
+
     private void OnDestroy() {
         Question.OnQuestionBegin -= QuestionBeginHandler;
+        skip.onClick.RemoveAllListeners();
+        submit.onClick.RemoveAllListeners();
     }
 }

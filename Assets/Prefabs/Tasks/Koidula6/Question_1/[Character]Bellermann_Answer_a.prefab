@@ -43,13 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3382494258e9c43ad4f54c97e80504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDelay: 0
   OnBeginEvent:
     m_PersistentCalls:
       m_Calls: []
   OnEndEvent:
     m_PersistentCalls:
       m_Calls: []
+  initialDelay: 0.1
   isLooping: 1
   clip: {fileID: 32900000, guid: 548200bc6df7b416cb575b0a257e7f77, type: 3}
   voice: {fileID: 8300000, guid: 8254bc4cbb01e4943ba575e948e8e7cd, type: 3}

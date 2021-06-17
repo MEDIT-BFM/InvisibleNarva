@@ -9,12 +9,9 @@ public class CharacterManager : Singleton<CharacterManager> {
     public static event Action<Character> OnPlay = delegate { };
     public static event Action OnStop = delegate { };
 
-    public bool IsPlaying { get => _audioSource.isPlaying; }
-
+    private Character _current;
     private AudioSource _audioSource;
     private VideoPlayer _videoPlayer;
-
-    private Character _current;
     private WaitUntil _waitUntilVideoStop;
     private WaitUntil _waitUntilVideoPrepared;
 
@@ -49,11 +46,13 @@ public class CharacterManager : Singleton<CharacterManager> {
 
         yield return null;
         yield return _waitUntilVideoStop;
-        _current.End();
         _audioSource.Stop();
         _videoPlayer.Stop();
-        _videoPlayer.clip = null;
+
         _audioSource.clip = null;
+        _videoPlayer.clip = null;
+
+        _current.End();
         OnStop?.Invoke();
         SoundManager.Instance.FadeOut();
     }

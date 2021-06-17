@@ -10,8 +10,8 @@ public class Speech : Entity {
     public float GetDuration { get => voice.length; }
 
     public override void Begin() {
-        NarrationManager.Instance.Play(this, isSubtitleOn);
         TriggerBegin(this);
+        NarrationManager.Instance.Play(this, isSubtitleOn);
     }
 
     public override void End() {

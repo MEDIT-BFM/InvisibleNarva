@@ -27,7 +27,7 @@ public class Task : MonoBehaviour {
         _entityQueue = new Queue<Entity>(entities);
     }
 
-    private void EntityEndHandler(object sender, Entity.OnEndEventArgs e) {
+    private void EntityEndHandler(object sender) {
         if (_entityQueue.Count > 0) {
             Begin(GetNext());
         }

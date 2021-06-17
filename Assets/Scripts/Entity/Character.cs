@@ -13,8 +13,8 @@ public class Character : Entity {
     public RectTransform RenderTransform { get => renderTransform; }
 
     public override void Begin() {
-        CharacterManager.Instance.Play(this);
         TriggerBegin(this);
+        CharacterManager.Instance.Play(this);
     }
 
     public override void End() {
