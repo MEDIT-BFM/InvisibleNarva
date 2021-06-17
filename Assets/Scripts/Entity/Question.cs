@@ -9,7 +9,7 @@ public class Question : Entity {
     public QuestionData Data { get => questionData; }
 
     public override void Begin() {
-        questionData.Character.Begin();
+        //questionData.Character.Begin();
         TriggerBegin(this);
         OnQuestionBegin?.Invoke(this);
     }

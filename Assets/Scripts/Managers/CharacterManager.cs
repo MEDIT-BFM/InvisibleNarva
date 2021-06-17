@@ -9,6 +9,8 @@ public class CharacterManager : Singleton<CharacterManager> {
     public static event Action<Character> OnPlay = delegate { };
     public static event Action OnStop = delegate { };
 
+    public bool IsPlaying { get => _audioSource.isPlaying; }
+
     private AudioSource _audioSource;
     private VideoPlayer _videoPlayer;
 
@@ -52,7 +54,6 @@ public class CharacterManager : Singleton<CharacterManager> {
         _videoPlayer.Stop();
         _videoPlayer.clip = null;
         _audioSource.clip = null;
-        _videoPlayer.targetTexture = null;
         OnStop?.Invoke();
         SoundManager.Instance.FadeOut();
     }

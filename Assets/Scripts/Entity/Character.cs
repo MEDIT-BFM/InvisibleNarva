@@ -15,9 +15,6 @@ public class Character : Entity {
     public override void Begin() {
         CharacterManager.Instance.Play(this);
         TriggerBegin(this);
-
-        Debug.Log("Height: " + clip.height);
-        Debug.Log("Width: " + clip.width);
     }
 
     public override void End() {

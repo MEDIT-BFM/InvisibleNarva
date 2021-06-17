@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using System;
+using System.Collections;
 
 public class QuestionUI : MonoBehaviour {
     [SerializeField] private Button submit;
@@ -57,13 +59,25 @@ public class QuestionUI : MonoBehaviour {
     private void QuestionBeginHandler(Question q) {
         _current = q;
 
-        question.text = _current.Data.Question;
-        Show();
-
-        var a = _current.Data.Answers;
-        for (int i = 0; i < a.Length; i++) {
-            answers[i].SetText(a[i].Answer);
+        for (int j = 0; j < answers.Length; j++) {
+            answers[j].Hide();
         }
+
+        question.text = _current.Data.Question;
+        _current.Data.Character.OnEnd += (sender, e) => StartCoroutine(ReadAnswerCor());
+        Show(() => _current.Data.Character.Begin());
+    }
+
+    private IEnumerator ReadAnswerCor() {
+        var a = _current.Data.Answers;
+
+        for (int i = 0; i < a.Length; i++) {
+            a[i].Character.Begin();
+            answers[i].Display(a[i].Answer);
+            yield return a[i].Character.WaitUntilEnd;
+        }
+
+        yield return null;
     }
 
 
@@ -79,10 +93,9 @@ public class QuestionUI : MonoBehaviour {
 
     private void Hide(TweenCallback callback = null) {
         DOTween.Sequence()
-            //.Append(_transform.DOScale(1.1f, 0.15f))
             .Append(_transform.DOShakeRotation(duration: 0.5f, strength: Vector2.one * 10, vibrato: 20, fadeOut: false))
-            //.Append(_transform.DOScale(0, 0.15f))
             .AppendCallback(() => {
+                submit.interactable = false;
                 gameObject.SetActive(false);
                 callback();
             });

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class AnswerUI : MonoBehaviour {
     [SerializeField] private int id;
@@ -10,8 +11,14 @@ public class AnswerUI : MonoBehaviour {
     private const float _fontSizeMultiplier = 1.1f;
     private readonly Vector2 _textPaddingSize = new Vector2(25,25);
 
-    public void SetText(string answer) {
-        text.SetDynamicText(_rectTransform, answer, _textPaddingSize);
+    public void Display(string content) {
+        gameObject.SetActive(true);
+        text.SetDynamicText(_rectTransform, content, _textPaddingSize);
+        _rectTransform.DOShakePosition(0.2f);
+    }
+
+    public void Hide() {
+        gameObject.SetActive(false);
     }
 
     public void Select() {
