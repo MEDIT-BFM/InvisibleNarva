@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
+
+public enum AxisOptions { Both, Horizontal, Vertical }
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
@@ -146,5 +146,3 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         return Vector2.zero;
     }
 }
-
-public enum AxisOptions { Both, Horizontal, Vertical }
