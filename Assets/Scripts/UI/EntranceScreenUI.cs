@@ -5,7 +5,7 @@ public class EntranceScreenUI : MonoBehaviour {
     [SerializeField] private GameObject skipButton;
     [SerializeField] private Transform tapButtonLabel;
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private EntranceScreen introductionController;
+    [SerializeField] private EntranceScreen entranceScreen;
 
     private Sequence _tapSequence;
 
@@ -20,7 +20,7 @@ public class EntranceScreenUI : MonoBehaviour {
         canvasGroup.DOFade(0, 0.5f).OnComplete(() => {
             canvasGroup.gameObject.SetActive(false);
             skipButton.SetActive(true);
-            introductionController.PlayOrSkip();
+            entranceScreen.PlayOrSkip();
             _tapSequence.Kill();
         });
     }

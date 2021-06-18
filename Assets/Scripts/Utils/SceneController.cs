@@ -7,27 +7,24 @@ using DG.Tweening;
 public class SceneController : Singleton<SceneController> {
     public bool DisplayLoading = true;
 
-    [SerializeField] private float transitionDuration = 1;
+    [SerializeField] private float transitionDuration = 0.5f;
     [SerializeField] private GameObject loadProgressUIPanel;
     [SerializeField] private Slider loadProgressSlider;
     [SerializeField] private Image transitionImage;
 
     public void ChangeScene(string sceneName) {
-        var opr = SceneManager.LoadSceneAsync(sceneName);
-        StartCoroutine(LoadSceneOpr(opr));
-    }
-
-    public void ChangeScene(string sceneName, float duration = 0) {
-        if (duration == 0) {
-            ChangeScene(sceneName);
+        if (transitionDuration == 0) {
+            var opr = SceneManager.LoadSceneAsync(sceneName);
+            StartCoroutine(LoadSceneOpr(opr));
             return;
         }
 
         transitionImage.gameObject.SetActive(true);
         float alpha = transitionImage.color.a == 0 ? 1 : 0;
-        DOTween.Sequence().Append(transitionImage.DOFade(alpha, duration)).OnComplete(() => {
+        DOTween.Sequence().Append(transitionImage.DOFade(alpha, transitionDuration)).OnComplete(() => {
             transitionImage.gameObject.SetActive(false);
-            ChangeScene(sceneName);
+            var opr = SceneManager.LoadSceneAsync(sceneName);
+            StartCoroutine(LoadSceneOpr(opr));
         });
     }
 

@@ -46,4 +46,5 @@ MonoBehaviour:
   IsCompleted: 0
   InitialPlayerTransform: {fileID: 9199320370046961893, guid: e4a11aa4ea0b8d64fa2b2dec1008562e,
     type: 3}
+  CompletedSprite: {fileID: 21300000, guid: 3a64809f8317d4a5aaba66a45a4d73b9, type: 3}
   QuestInfoText: "<style=\"Title\">House of Peter the Great\r</style>\n\n<align=\"center\">1684-1944"

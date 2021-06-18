@@ -9,7 +9,9 @@ public abstract class Entity : MonoBehaviour {
     public event Action<object> OnEnd;
 
     [SerializeField] private float initialDelay;
+    [SerializeField] private bool isSkippable = true;
 
+    public bool IsSkippable { get => isSkippable; }
     public bool IsPlaying{ get; private set; }
     public float InitialDelay { get => initialDelay; }
 

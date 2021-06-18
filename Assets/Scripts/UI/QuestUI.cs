@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class QuestUI : MonoBehaviour {
     [SerializeField] private Quest quest;
     [SerializeField] private Image questImage;
-    [SerializeField] private Sprite completedQuestSprite;
 
     public Quest Quest { get => quest; }
 
@@ -21,7 +20,7 @@ public class QuestUI : MonoBehaviour {
         }
 
         if (quest.IsCompleted) {
-            questImage.sprite = completedQuestSprite;
+            questImage.sprite = quest.CompletedSprite;
         }
 
         _toggle.onValueChanged.AddListener(UpdateInfoText);

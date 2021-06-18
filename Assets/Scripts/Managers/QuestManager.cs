@@ -14,7 +14,7 @@ public class QuestManager : Singleton<QuestManager> {
     }
 
     public void EnterWorld() {
-        SceneController.Instance.ChangeScene("GameWorld", 0.5f);
+        SceneController.Instance.ChangeScene("GameWorld");
     }
 
     private void OnEnable() {

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class MinimapIconUI : MonoBehaviour {
-    [SerializeField] private Sprite completedSprite;
+    [SerializeField] private Quest quest;
 
     private bool _isCompassOn;
     private Transform _transform;
@@ -11,7 +11,8 @@ public class MinimapIconUI : MonoBehaviour {
     private Image _image;
 
     public void Complete() {
-        _image.sprite = completedSprite;
+        quest.IsCompleted = true;
+        _image.sprite = quest.CompletedSprite;
         _transform.DOShakeScale(1, Vector2.one * 0.1f);
         _image.GraphicUpdateComplete();
     }
@@ -27,6 +28,9 @@ public class MinimapIconUI : MonoBehaviour {
 
     private void Start() {
         _player = TaskManager.Instance.Player;
+        if (quest.IsCompleted) {
+            _image.sprite = quest.CompletedSprite;
+        }
     }
 
     private void CompassChangedHander(bool isOn) {

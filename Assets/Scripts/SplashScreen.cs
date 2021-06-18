@@ -1,5 +1,5 @@
-﻿using DG.Tweening;
-using UnityEngine;
+﻿using UnityEngine;
+using DG.Tweening;
 
 public class SplashScreen : MonoBehaviour {
     [SerializeField] private float displayTime;
@@ -16,6 +16,6 @@ public class SplashScreen : MonoBehaviour {
     }
 
     private void ChangeScene() {
-        SceneController.Instance.ChangeScene("Entrance", 0.5f);
+        SceneController.Instance.ChangeScene("Entrance");
     }
 }

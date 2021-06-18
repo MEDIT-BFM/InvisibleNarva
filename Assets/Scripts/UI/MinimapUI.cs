@@ -1,12 +1,15 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class MinimapUI : MonoBehaviour {
     public static event Action<bool> OnCompassChanged = delegate { };
 
     [SerializeField] private PlayerController player;
     [SerializeField] private Camera minimapCamera;
+    [SerializeField] private RectTransform minimap;
+    [SerializeField] private RectTransform minimapShowButton;
     [SerializeField] private Toggle compass;
     [SerializeField] private Slider zoomSlider;
 
@@ -14,6 +17,19 @@ public class MinimapUI : MonoBehaviour {
     private Image _compassImage;
     private Transform _dynamicCompass;
     private Transform _mapCamTransform;
+    private Sequence _minimapHideTween;
+    private bool _minimapDisplayToggle = false;
+
+    private const float _minimapHideTweenDuration = 0.3f;
+    private readonly Vector3 _axisZ_90 = new Vector3(0, 0, 90);
+
+    public void Display() {
+        _minimapHideTween.SmoothRewind();
+    }
+
+    public void Hide() {
+        _minimapHideTween.PlayForward();
+    }
 
     private void Awake() {
         _compassImage = compass.GetComponent<Image>();
@@ -24,10 +40,22 @@ public class MinimapUI : MonoBehaviour {
     private void OnEnable() {
         compass.onValueChanged.AddListener(CompassChangedHandler);
         zoomSlider.onValueChanged.AddListener(ZoomValueChangedHandler);
+        _mapCamTransform.position = new Vector3(player.transform.position.x, _mapCamTransform.position.y, player.transform.position.z);
     }
 
     private void Start() {
-        _mapCamTransform.position = new Vector3(player.Transform.position.x, _mapCamTransform.position.y, player.Transform.position.z);
+        Task.OnInitiated += (task) => gameObject.SetActive(false);
+        Task.OnCompleted += (task) => gameObject.SetActive(true);
+
+        _minimapHideTween = DOTween.Sequence()
+                .Append(minimap.DOScale(0, _minimapHideTweenDuration * 0.75f))
+                .AppendCallback(() => minimapShowButton.gameObject.SetActive(_minimapDisplayToggle = !_minimapDisplayToggle))
+                .Append(minimapShowButton.DOScale(1, _minimapHideTweenDuration))
+                .Join(minimapShowButton.DOPunchRotation(_axisZ_90, _minimapHideTweenDuration))
+                .AppendCallback(() => minimap.gameObject.SetActive(_minimapDisplayToggle = !_minimapDisplayToggle))
+                .SetAutoKill(false);
+
+        _minimapHideTween.Pause();
     }
 
     private void LateUpdate() {

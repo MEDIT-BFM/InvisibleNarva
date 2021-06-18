@@ -18,12 +18,12 @@ public class CreditsUI : MonoBehaviour {
         _creditsCanvasGroup.DOFade(1, 0.75f).OnComplete(() => {
             DOTween.Sequence()
             .Append(_creditsRect.DOAnchorPosY(0, _creditsHeight * _speedMultiplier))
-            .OnComplete(() => SceneController.Instance.ChangeScene("Entrance", 0.5f));
+            .OnComplete(() => SceneController.Instance.ChangeScene("Entrance"));
         });
     }
 
     public void Skip() {
-        SceneController.Instance.ChangeScene("Entrance", 0.5f);
+        SceneController.Instance.ChangeScene("Entrance");
     }
 
     private void Awake() {

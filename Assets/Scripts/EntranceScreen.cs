@@ -11,14 +11,13 @@ public class EntranceScreen : MonoBehaviour {
 
     private VideoPlayer _videoPlayer;
     private Queue<VideoClip> _clips;
-    private const float _fadeOutDuration = 0.5f;
 
     public void PlayOrSkip() {
         if (_clips.Count > 0) {
             Play(_clips.Dequeue());
         }
         else {
-            SceneController.Instance.ChangeScene(nextSceneName, _fadeOutDuration);
+            SceneController.Instance.ChangeScene(nextSceneName);
         }
     }
 

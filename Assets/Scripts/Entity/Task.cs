@@ -16,6 +16,10 @@ public class Task : MonoBehaviour {
     private Queue<Entity> _entityQueue;
 
     public void Skip() {
+        if (!_current.IsSkippable) {
+            return;
+        }
+
         Begin(GetNext());
 
         if (_current == null) {
