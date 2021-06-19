@@ -51,10 +51,6 @@ namespace InvisibleNarva {
             submit.gameObject.SetActive(false);
             Show(questionCharacter.Begin);
             questionCharacter.OnEnd += (sender) => StartCoroutine(ReadAnswerCor());
-
-            for (int j = 0; j < answers.Length; j++) {
-                answers[j].Hide();
-            }
         }
 
         private void Submit() {

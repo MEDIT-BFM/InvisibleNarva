@@ -19,6 +19,11 @@ namespace InvisibleNarva {
 
         private void NarrationPlayHandler(Speech narration, bool showSubtitle) {
             gameObject.SetActive(showSubtitle);
+
+            if (!showSubtitle) {
+                return;
+            }
+
             var width = subtitle.GetPreferredValues(narration.Subtitle).x;
 
             if (width < _subtitleSize.x) {

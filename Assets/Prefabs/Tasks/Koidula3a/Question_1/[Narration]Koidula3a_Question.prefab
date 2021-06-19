@@ -51,6 +51,6 @@ MonoBehaviour:
       m_Calls: []
   initialDelay: 0
   isSkippable: 0
-  isSubtitleOn: 1
+  isSubtitleOn: 0
   voice: {fileID: 8300000, guid: c39076741b2864455a0daa8d69701bde, type: 3}
   subtitle: Since when has there been a building for education?
