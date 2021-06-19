@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d731c36c804aced4daad25223b3f071e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDelay: 0
   OnBeginEvent:
     m_PersistentCalls:
       m_Calls:
@@ -60,22 +59,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3186029285154905438, guid: 90ccb5c573e6cc84080aaf58551b485d,
-          type: 3}
-        m_TargetAssemblyTypeName: Character, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnEndEvent:
     m_PersistentCalls:
       m_Calls: []
+  initialDelay: 0
+  isSkippable: 1
   isSubtitleOn: 1
   voice: {fileID: 8300000, guid: b91f2afa40d3f0e4abf1b349d2af4324, type: 3}
   subtitle: 2nd half of the 20th century. Narva is a part of the Estonian Republic.

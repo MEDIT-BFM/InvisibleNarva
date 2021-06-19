@@ -26,7 +26,6 @@ namespace InvisibleNarva {
             text.color = Color.blue;
             text.fontSize *= _fontSizeMultiplier;
             text.ForceMeshUpdate();
-
         }
 
         public void Deselect() {

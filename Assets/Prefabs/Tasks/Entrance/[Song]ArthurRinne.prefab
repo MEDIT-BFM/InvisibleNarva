@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   looping: 0
-  initialDelay: 0
+  initialDelay: 1
   clip: {fileID: 8300000, guid: 6ba97615bc00c6c4e977083d128519a1, type: 3}

@@ -55,7 +55,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Brygada1918 SDF Material
-  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Brygada1918_Narration
   m_EditorClassIdentifier: 
-  hashCode: 1531170394
+  hashCode: -1058711930
   material: {fileID: -5657365355237775231}
-  materialHashCode: 197920058
+  materialHashCode: 834075238
   m_Version: 1.1.0
   m_SourceFontFileGUID: 6d93a72b1d9a8b84981cc07ec77f19c1
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 6d93a72b1d9a8b84981cc07ec77f19c1,

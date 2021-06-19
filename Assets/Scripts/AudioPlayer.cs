@@ -7,7 +7,9 @@ namespace InvisibleNarva {
         [SerializeField] private AudioClip clip;
 
         public void Play() {
-            SoundManager.Instance.Play(clip, initialDelay, looping);
+            if (SoundManager.InstanceExists) {
+                SoundManager.Instance.Play(clip, initialDelay, looping);
+            }
         }
     }
 }

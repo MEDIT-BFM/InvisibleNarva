@@ -50,8 +50,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   initialDelay: 0
-  isSkippable: 1
-  isLooping: 0
+  isSkippable: 0
+  isLooping: 1
   clip: {fileID: 32900000, guid: b261cf9b93765b7439d87c39ca3f4ed8, type: 3}
   voice: {fileID: 8300000, guid: c989d130132b4414d9ef5a9062c60348, type: 3}
   renderTransform: {fileID: 6669022780366860432, guid: 357eab77825f44d4f83ffcea5707941e,

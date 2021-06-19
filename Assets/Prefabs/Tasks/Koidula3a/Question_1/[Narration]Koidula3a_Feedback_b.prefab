@@ -43,6 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d731c36c804aced4daad25223b3f071e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
   initialDelay: 0
+  isSkippable: 0
+  isSubtitleOn: 1
   voice: {fileID: 8300000, guid: 0e09afee93bd64a8e83ada71d0d27e18, type: 3}
   subtitle: You have to dig more into the past! Try again!
