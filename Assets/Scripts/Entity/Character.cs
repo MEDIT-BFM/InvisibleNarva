@@ -8,13 +8,11 @@ namespace InvisibleNarva {
         [SerializeField] private VideoClip clip;
         [SerializeField] private AudioClip voice;
         [SerializeField] private RectTransform renderTransform;
-       // [SerializeField] private RenderTexture renderTexture;
 
         public bool IsLooping { get => isLooping; }
         public VideoClip Clip { get => clip; }
         public AudioClip Voice { get => voice; }
         public RectTransform RenderTransform { get => renderTransform; }
-      //  public RenderTexture RenderTexture { get => renderTexture; }
 
         public override void Begin() {
             TriggerBegin(this);
