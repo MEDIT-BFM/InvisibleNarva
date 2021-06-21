@@ -8,6 +8,8 @@ namespace InvisibleNarva {
         [SerializeField] private float audioFadeInDuration = 0.5f;
         [SerializeField] private AudioSource audioSource;
 
+        public AudioSource AudioSource { get => audioSource; }
+
         public void Play(AudioClip clip, float delay = 0, bool loop = false) {
             audioSource.DOFade(1, 0);
             audioSource.loop = loop;

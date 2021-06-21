@@ -46,10 +46,10 @@ MonoBehaviour:
   OnBeginEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2225857912098096695, guid: e4e4c9de8f5d2e9499513db4cccde6c9,
+      - m_Target: {fileID: 3186029285154905438, guid: 90ccb5c573e6cc84080aaf58551b485d,
           type: 3}
-        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
-        m_MethodName: Play
+        m_TargetAssemblyTypeName: InvisibleNarva.Character, Assembly-CSharp
+        m_MethodName: Begin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

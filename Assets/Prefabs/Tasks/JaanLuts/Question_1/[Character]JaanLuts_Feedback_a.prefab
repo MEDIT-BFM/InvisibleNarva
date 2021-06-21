@@ -51,6 +51,7 @@ MonoBehaviour:
       m_Calls: []
   initialDelay: 0
   isSkippable: 1
+  isPlayingOnUI: 1
   isLooping: 1
   clip: {fileID: 32900000, guid: b261cf9b93765b7439d87c39ca3f4ed8, type: 3}
   voice: {fileID: 8300000, guid: 169482480e9f96e4d953e431ffbbea92, type: 3}
