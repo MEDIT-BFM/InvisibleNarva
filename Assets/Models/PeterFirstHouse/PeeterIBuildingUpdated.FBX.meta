@@ -1,31 +1,77 @@
 fileFormatVersion: 2
 guid: 2471ddef46b3145ef9822d232e3011d2
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: 'Material #25'
-    2100002: Seinad
-    2100004: Katus
-    2100006: tellis
-    2100008: 'Material #43'
-    2100010: 'Material #55'
-    2100012: Aknalaud
-    2100014: Esiuks
-    2100016: Graniit
-    2100018: ValgeKrohv
-    2100020: Sammas
-    2100022: Rodupiire
-    2100024: Katusmetall
-    2100026: Roduuks
-    2100028: voluutesikylg
-    2100030: Tume puit
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: PeeterIBuildingUpdated
-    7400000: Take 001
-    9500000: //RootNode
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: Material #25
+  - first:
+      21: 2100002
+    second: Seinad
+  - first:
+      21: 2100004
+    second: Katus
+  - first:
+      21: 2100006
+    second: tellis
+  - first:
+      21: 2100008
+    second: Material #43
+  - first:
+      21: 2100010
+    second: Material #55
+  - first:
+      21: 2100012
+    second: Aknalaud
+  - first:
+      21: 2100014
+    second: Esiuks
+  - first:
+      21: 2100016
+    second: Graniit
+  - first:
+      21: 2100018
+    second: ValgeKrohv
+  - first:
+      21: 2100020
+    second: Sammas
+  - first:
+      21: 2100022
+    second: Rodupiire
+  - first:
+      21: 2100024
+    second: Katusmetall
+  - first:
+      21: 2100026
+    second: Roduuks
+  - first:
+      21: 2100028
+    second: voluutesikylg
+  - first:
+      21: 2100030
+    second: Tume puit
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: PeeterIBuildingUpdated
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -55,17 +101,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #25'
+      name: Material #25
     second: {fileID: 2100000, guid: 34da6839197eb44bf95e9f24ff0bb9a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #43'
+      name: Material #43
     second: {fileID: 2100000, guid: 9c0782a79250642aaacc23b78c5fce78, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #55'
+      name: Material #55
     second: {fileID: 2100000, guid: 02d3db767518c4cdfa5af6942149cbf8, type: 2}
   - first:
       type: UnityEngine:Material
@@ -223,7 +269,7 @@ ModelImporter:
       name: white-wood-texture-stock-picture-3949993_normal
     second: {fileID: 2800000, guid: 5afd94bfb320f46a79519dc5d48391bd, type: 3}
   materials:
-    importMaterials: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -249,40 +295,51 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -292,13 +349,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
