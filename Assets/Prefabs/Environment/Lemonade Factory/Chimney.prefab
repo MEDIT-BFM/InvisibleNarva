@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4296004330413066353}
   - component: {fileID: 878662314105014228}
   - component: {fileID: 3158525210732294942}
+  - component: {fileID: 6625407667514914906}
   m_Layer: 0
   m_Name: Chimney
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6625407667514914906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518905059561689803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4154472, y: 4.2251244, z: 3.8727171}
+  m_Center: {x: 0, y: 2.1125622, z: 0}

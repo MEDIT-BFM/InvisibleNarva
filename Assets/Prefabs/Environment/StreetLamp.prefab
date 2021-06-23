@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8279772858244434431}
   - component: {fileID: 4992365662842881626}
   - component: {fileID: 7110204521636917904}
+  - component: {fileID: 4603531157114280759}
   m_Layer: 0
   m_Name: StreetLamp
   m_TagString: Untagged
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4603531157114280759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767515785110541125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13502121, y: 1.5205402, z: 0.135021}
+  m_Center: {x: 0, y: 0.7602701, z: 0}
 --- !u!1001 &7642947310823544590
 PrefabInstance:
   m_ObjectHideFlags: 0

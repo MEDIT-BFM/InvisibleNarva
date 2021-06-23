@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7128917546828585745}
   - component: {fileID: 6143150864057717940}
   - component: {fileID: 8260776408806826110}
+  - component: {fileID: 1500489738613405714}
+  - component: {fileID: 3230538142050440364}
   m_Layer: 0
   m_Name: Building_09
   m_TagString: Untagged
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1500489738613405714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7612438038936027563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.377943, y: 3.002872, z: 7.8257103}
+  m_Center: {x: -4.942231, y: 1.501436, z: 0.011936188}
+--- !u!65 &3230538142050440364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7612438038936027563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.967245, y: 3.0647726, z: 5.0054827}
+  m_Center: {x: 3.7292805, y: 1.5323863, z: -0.32737875}
