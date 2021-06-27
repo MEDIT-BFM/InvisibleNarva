@@ -17,6 +17,11 @@ namespace InvisibleNarva {
         private Transform _transform;
         private CharacterController _characterController;
 
+        public void Locate(Transform target) {
+            _transform.position = target.position;
+            _transform.rotation = target.rotation;
+        }
+
         private void Awake() {
             _transform = transform;
             _characterController = GetComponent<CharacterController>();
@@ -41,15 +46,13 @@ namespace InvisibleNarva {
         }
 
         private void TaskInitiatedHandler(Task task) {
-            moveStick.OnPointerUp(null);
-            lookStick.OnPointerUp(null);
-            moveStick.gameObject.SetActive(false);
-            lookStick.gameObject.SetActive(false);
+            moveStick.Disable();
+            lookStick.Disable();
         }
 
         private void TaskCompletedHandler(Task task) {
-            moveStick.gameObject.SetActive(true);
-            lookStick.gameObject.SetActive(true);
+            moveStick.Enable();
+            lookStick.Enable();
         }
 
         private void FixedUpdate() {

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameWorld.unity
     guid: c4373c88bf7174b5a95ceaf7b8c32157
+  - enabled: 1
+    path: Assets/Scenes/JaaniChurchInterior.unity
+    guid: ecf6dbcad69831641a87ef5c48d24984
   m_configObjects: {}

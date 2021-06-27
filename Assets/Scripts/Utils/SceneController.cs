@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class SceneController : Singleton<SceneController> {
     public bool DisplayLoading = true;
@@ -26,6 +27,20 @@ public class SceneController : Singleton<SceneController> {
             var opr = SceneManager.LoadSceneAsync(sceneName);
             StartCoroutine(LoadSceneOpr(opr));
         });
+    }
+
+    public void LoadAdditiveScene(string sceneName, UnityAction onLoadBegin = null, UnityAction onLoadComplete=null) {
+        onLoadBegin();
+
+        var opr = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        opr.completed += (opr) => onLoadComplete();
+    }
+
+    public void Unload(string sceneName, UnityAction onUnloadBegin = null, UnityAction onUnloadComplete = null) {
+        onUnloadBegin();
+
+        var opr = SceneManager.UnloadSceneAsync(sceneName);
+        opr.completed += (opr) => onUnloadComplete();
     }
 
     private void Start() {
