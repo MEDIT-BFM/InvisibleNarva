@@ -16,6 +16,14 @@ namespace InvisibleNarva {
         private Entity _current;
         private Queue<Entity> _entityQueue;
 
+        public void Enable() {
+            gameObject.SetActive(true);
+        }
+
+        public void Disable() {
+            gameObject.SetActive(false);
+        }
+
         public void Skip() {
             if (!_current.IsSkippable) {
                 return;
@@ -59,7 +67,7 @@ namespace InvisibleNarva {
 
         private void Complete() {
             minimapIcon.Complete();
-            gameObject.SetActive(false);
+            enabled = false;
             OnCompleted?.Invoke(this);
             _current.OnEnd -= EntityEndHandler;
         }

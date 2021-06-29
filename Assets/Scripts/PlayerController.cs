@@ -28,13 +28,23 @@ namespace InvisibleNarva {
         }
 
         private void OnEnable() {
-            Task.OnInitiated += TaskInitiatedHandler;
-            Task.OnCompleted += TaskCompletedHandler;
+            Question.OnQuestionBegin += QuestionBeginHandler;
             TaskManager.OnGameOver += GameOverHandler;
         }
 
+        private void QuestionBeginHandler(Question q) {
+            moveStick.Disable();
+            lookStick.Disable();
+
+            q.OnEnd += (q) => {
+                moveStick.Enable();
+                lookStick.Enable();
+            };
+        }
+
         private void GameOverHandler() {
-            TaskInitiatedHandler(null);
+            moveStick.Disable();
+            lookStick.Disable();
         }
 
         private void Start() {
@@ -43,16 +53,6 @@ namespace InvisibleNarva {
             _transform.rotation = startPosition.rotation;
             minimapIcon.position = _transform.position;
             minimapIcon.rotation = Quaternion.Euler(0, _transform.rotation.eulerAngles.y, 0);
-        }
-
-        private void TaskInitiatedHandler(Task task) {
-            moveStick.Disable();
-            lookStick.Disable();
-        }
-
-        private void TaskCompletedHandler(Task task) {
-            moveStick.Enable();
-            lookStick.Enable();
         }
 
         private void FixedUpdate() {
@@ -74,8 +74,7 @@ namespace InvisibleNarva {
         }
 
         private void OnDisable() {
-            Task.OnInitiated -= TaskInitiatedHandler;
-            Task.OnCompleted -= TaskCompletedHandler;
+            Question.OnQuestionBegin -= QuestionBeginHandler;
             TaskManager.OnGameOver -= GameOverHandler;
         }
     }

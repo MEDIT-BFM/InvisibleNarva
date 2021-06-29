@@ -35,6 +35,7 @@ namespace InvisibleNarva {
 
         private void TaskInitiatedHandler(Task task) {
             _current = task;
+            DisableAll();
         }
 
         private void TaskCompletedHandler(Task task) {
@@ -45,8 +46,21 @@ namespace InvisibleNarva {
                 return;
             }
 
+            EnableAll();
             var next = CheckList.FindFirstKeyByValue(false);
             OnNextPointed?.Invoke(next);
+        }
+
+        private void EnableAll() {
+            for (int i = 0; i < availableTasks.Count; i++) {
+                availableTasks[i].Enable();
+            }
+        }
+
+        private void DisableAll() {
+            for (int i = 0; i < availableTasks.Count; i++) {
+                availableTasks[i].Disable();
+            }
         }
 
         private void OnDisable() {
