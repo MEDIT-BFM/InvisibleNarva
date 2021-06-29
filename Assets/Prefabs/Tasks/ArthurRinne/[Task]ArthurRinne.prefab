@@ -43,7 +43,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 3.8, z: 50}
+  m_Size: {x: 27.6, y: 3.8, z: 29.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7142392176221257221
 MonoBehaviour:
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: ArthurRinne
+  minimapIcon: {fileID: 0}
   entities:
   - {fileID: 2113825105210806618, guid: 5ddbe54634ded3643aa047315697a20f, type: 3}
   - {fileID: 1823643861073501221, guid: 41a9cdfe9390111488202eb4f86ae5fa, type: 3}

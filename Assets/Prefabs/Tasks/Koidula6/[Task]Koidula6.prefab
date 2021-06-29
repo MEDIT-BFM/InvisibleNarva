@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595827961603196535}
-  - component: {fileID: 2927884248567650648}
   - component: {fileID: 1864786272471346505}
+  - component: {fileID: 5620008034700184511}
   m_Layer: 0
   m_Name: '[Task]Koidula6'
   m_TagString: Untagged
@@ -32,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2927884248567650648
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894594664689285093}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1864786272471346505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,3 +53,16 @@ MonoBehaviour:
   - {fileID: 3186029285154905438, guid: b38d03a450d974747b0546395fec134b, type: 3}
   - {fileID: 6829815671165996625, guid: 53e0fca77eb718d498d590410456c117, type: 3}
   - {fileID: 6829815671165996625, guid: afe33b60e38896843b4407fb9ecd00d0, type: 3}
+--- !u!65 &5620008034700184511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894594664689285093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 2, z: 22.84}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2765861606347012347}
-  - component: {fileID: 3803411003240481847}
   - component: {fileID: 4765788154125037580}
+  - component: {fileID: 2104980115893669359}
   m_Layer: 0
   m_Name: '[Task]PeterFirst'
   m_TagString: Untagged
@@ -25,26 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4881053819489241225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 318.3, y: 2.4, z: 318.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3803411003240481847
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4881053819489241225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4765788154125037580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimapIcon: {fileID: 0}
   entities:
   - {fileID: 6829815671165996625, guid: 0ec1fe8e390e0104cb750b8b15b2a21a, type: 3}
   - {fileID: 6829815671165996625, guid: 485c7d2ebc42d924f82e878222286c1f, type: 3}
   - {fileID: 6829815671165996625, guid: 56e74ddd8aea7524ca64cfb9b8eed067, type: 3}
+--- !u!65 &2104980115893669359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4881053819489241225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.08, y: 2, z: 11.65}
+  m_Center: {x: 0, y: 0, z: 0}
