@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2291183814091112285}
-  - component: {fileID: 1055530532290650391}
   - component: {fileID: 8796737878864506614}
+  - component: {fileID: 1837222173349510608}
   m_Layer: 0
   m_Name: '[Task]JaanLuts'
   m_TagString: Untagged
@@ -32,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1055530532290650391
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5790522068817251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 6
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8796737878864506614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,3 +52,16 @@ MonoBehaviour:
   - {fileID: 3186029285154905438, guid: 4317de81e08a0dc4f90ed28839ad3b5e, type: 3}
   - {fileID: 6829815671165996625, guid: 96241aa0aaad8f1469d9e20f15ce9cd9, type: 3}
   - {fileID: 6829815671165996625, guid: 330e4d9ad54a6f7418a45276e4c89c66, type: 3}
+--- !u!65 &1837222173349510608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790522068817251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
