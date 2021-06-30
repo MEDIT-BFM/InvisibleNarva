@@ -3,9 +3,10 @@ using UnityEngine;
 namespace InvisibleNarva {
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour {
+        [SerializeField] private Transform playerCamera;
+        [SerializeField] private Transform minimapIcon;
         [SerializeField] private Joystick moveStick;
         [SerializeField] private Joystick lookStick;
-        [SerializeField] private Transform minimapIcon;
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private float rotationSpeed = 2f;
 
@@ -64,13 +65,16 @@ namespace InvisibleNarva {
             }
 
             if (lookStick.Direction.sqrMagnitude != 0) {
-               _xLook += lookStick.Direction.x;
-               _yLook += lookStick.Direction.y;
+                _xLook += lookStick.Direction.x;
+                _yLook += lookStick.Direction.y;
+                _yLook = Mathf.Clamp(_yLook, -60, 60);
 
                 var rotate = new Vector2(-_yLook, _xLook);
-                _transform.eulerAngles = rotationSpeed * rotate;
+                playerCamera.rotation = Quaternion.Euler(rotate);
 
-                minimapIcon.rotation = Quaternion.Euler(0, _transform.rotation.eulerAngles.y, 0);
+                var flatRotation = Quaternion.Euler(0, playerCamera.eulerAngles.y, 0);
+                _transform.rotation = flatRotation;
+                minimapIcon.rotation = flatRotation;
             }
         }
 
