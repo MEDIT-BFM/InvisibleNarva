@@ -64,11 +64,12 @@ namespace InvisibleNarva {
             }
 
             if (lookStick.Direction.sqrMagnitude != 0) {
-                _xLook += lookStick.Direction.x;
-                _yLook += lookStick.Direction.y;
+               _xLook += lookStick.Direction.x;
+               _yLook += lookStick.Direction.y;
 
                 var rotate = new Vector2(-_yLook, _xLook);
                 _transform.eulerAngles = rotationSpeed * rotate;
+
                 minimapIcon.rotation = Quaternion.Euler(0, _transform.rotation.eulerAngles.y, 0);
             }
         }
