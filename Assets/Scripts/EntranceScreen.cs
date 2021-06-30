@@ -31,8 +31,6 @@ namespace InvisibleNarva {
         private void Start() {
             _clips = new Queue<VideoClip>(videoClips);
             _videoPlayer = GetComponent<VideoPlayer>();
-
-            SoundManager.Instance.Play(entranceClip, entranceClipDelay);
         }
     }
 }
