@@ -15,11 +15,11 @@ namespace InvisibleNarva {
         [SerializeField] private Slider zoomSlider;
 
         private bool _isCompassOn;
+        private bool _minimapDisplayToggle = false;
         private Image _compassImage;
         private Transform _dynamicCompass;
         private Transform _mapCamTransform;
         private Sequence _minimapHideTween;
-        private bool _minimapDisplayToggle = false;
 
         private const float _minimapHideTweenDuration = 0.3f;
         private readonly Vector3 _axisZ_90 = new Vector3(0, 0, 90);
@@ -41,7 +41,6 @@ namespace InvisibleNarva {
         private void OnEnable() {
             compass.onValueChanged.AddListener(CompassChangedHandler);
             zoomSlider.onValueChanged.AddListener(ZoomValueChangedHandler);
-            _mapCamTransform.position = new Vector3(player.transform.position.x, _mapCamTransform.position.y, player.transform.position.z);
         }
 
         private void Start() {
@@ -67,10 +66,8 @@ namespace InvisibleNarva {
                 _dynamicCompass.rotation = Quaternion.Euler(0, 0, player.Transform.eulerAngles.y);
             }
 
-            if (player.IsMoving) {
-                var position = new Vector3(player.Transform.position.x, _mapCamTransform.position.y, player.Transform.position.z);
-                _mapCamTransform.position = position;
-            }
+            var position = new Vector3(player.Transform.position.x, _mapCamTransform.position.y, player.Transform.position.z);
+            _mapCamTransform.position = position;
         }
 
         private void ZoomValueChangedHandler(float value) {

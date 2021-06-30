@@ -19,8 +19,16 @@ namespace InvisibleNarva {
         private CharacterController _characterController;
 
         public void Locate(Transform target) {
-            _transform.position = target.position;
-            _transform.rotation = target.rotation;
+            minimapIcon.position =_transform.position = target.position;
+            Rotate(target.eulerAngles);
+
+            _xLook = target.eulerAngles.y;
+            _yLook = -target.eulerAngles.x;
+        }
+
+        public void Rotate(Vector3 eulerRotation) {
+            minimapIcon.rotation = _transform.rotation = Quaternion.Euler(0, eulerRotation.y, 0);
+            playerCamera.rotation = Quaternion.Euler(eulerRotation);
         }
 
         private void Awake() {
@@ -31,6 +39,12 @@ namespace InvisibleNarva {
         private void OnEnable() {
             Question.OnQuestionBegin += QuestionBeginHandler;
             TaskManager.OnGameOver += GameOverHandler;
+        }
+
+        private void Start() {
+            var startPosition = QuestManager.Instance.SelectedQuest.InitialPlayerTransform;
+
+            Locate(startPosition);
         }
 
         private void QuestionBeginHandler(Question q) {
@@ -48,14 +62,6 @@ namespace InvisibleNarva {
             lookStick.Disable();
         }
 
-        private void Start() {
-            var startPosition = QuestManager.Instance.SelectedQuest.InitialPlayerTransform;
-            _transform.position = startPosition.position;
-            _transform.rotation = startPosition.rotation;
-            minimapIcon.position = _transform.position;
-            minimapIcon.rotation = Quaternion.Euler(0, _transform.rotation.eulerAngles.y, 0);
-        }
-
         private void FixedUpdate() {
             IsMoving = moveStick.Vertical != 0;
 
@@ -68,13 +74,8 @@ namespace InvisibleNarva {
                 _xLook += lookStick.Direction.x;
                 _yLook += lookStick.Direction.y;
                 _yLook = Mathf.Clamp(_yLook, -60, 60);
-
                 var rotate = new Vector2(-_yLook, _xLook);
-                playerCamera.rotation = Quaternion.Euler(rotate);
-
-                var flatRotation = Quaternion.Euler(0, playerCamera.eulerAngles.y, 0);
-                _transform.rotation = flatRotation;
-                minimapIcon.rotation = flatRotation;
+                Rotate(rotate);
             }
         }
 

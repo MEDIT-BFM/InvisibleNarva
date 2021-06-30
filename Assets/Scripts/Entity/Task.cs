@@ -17,11 +17,15 @@ namespace InvisibleNarva {
         private Queue<Entity> _entityQueue;
 
         public void Enable() {
-            gameObject.SetActive(true);
+            if (gameObject) {
+                gameObject.SetActive(true);
+            }
         }
 
         public void Disable() {
-            gameObject.SetActive(false);
+            if (gameObject) {
+                gameObject.SetActive(false);
+            }
         }
 
         public void Skip() {
