@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0962bf5be0e245e46b0c5656ea7e0a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
   text: {fileID: 59026436393956227}
 --- !u!114 &59026435636735024
 MonoBehaviour:
@@ -211,7 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0962bf5be0e245e46b0c5656ea7e0a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 3
   text: {fileID: 59026437189479168}
 --- !u!114 &59026435969346540
 MonoBehaviour:
@@ -516,10 +514,10 @@ RectTransform:
   m_Father: {fileID: 7438961406465331928}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: -351}
-  m_SizeDelta: {x: 1291.1038, y: 228.8151}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -21.000366, y: 269}
+  m_SizeDelta: {x: -714.89624, y: 228.81506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &3805123555416835867
 CanvasGroup:
@@ -1768,7 +1766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0962bf5be0e245e46b0c5656ea7e0a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
   text: {fileID: 7327870667709739260}
 --- !u!114 &7215694556098210058
 MonoBehaviour:
