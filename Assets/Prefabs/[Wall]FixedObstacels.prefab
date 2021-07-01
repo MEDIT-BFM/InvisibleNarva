@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139767809287847}
   - component: {fileID: 3573139767809287846}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139767809287847
 Transform:
@@ -54,12 +54,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139768483178131}
   - component: {fileID: 3573139768483178130}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139768483178131
 Transform:
@@ -98,12 +98,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139768524063041}
   - component: {fileID: 3573139768524063040}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139768524063041
 Transform:
@@ -142,12 +142,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139768726046340}
   - component: {fileID: 3573139768726046339}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139768726046340
 Transform:
@@ -224,12 +224,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139768792117829}
   - component: {fileID: 3573139768792117828}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139768792117829
 Transform:
@@ -268,12 +268,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139769106441506}
   - component: {fileID: 3573139769106441505}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139769106441506
 Transform:
@@ -312,12 +312,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139769136701314}
   - component: {fileID: 3573139769136701313}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: wall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139769136701314
 Transform:
@@ -356,12 +356,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3573139769339459618}
   - component: {fileID: 3573139769339459617}
-  m_Layer: 12
+  - component: {fileID: 3573139768335338508}
+  - component: {fileID: 3573139768335338505}
+  m_Layer: 10
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3573139769339459618
 Transform:
@@ -371,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3573139769339459619}
   m_LocalRotation: {x: -0, y: 0.02298513, z: -0, w: 0.99973583}
-  m_LocalPosition: {x: 210, y: 2.4, z: 302}
+  m_LocalPosition: {x: 209, y: 2.4, z: 302}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3573139768789198124}
@@ -390,3 +392,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 181.49518}
   m_Center: {x: -0.0000009579692, y: 0, z: 2.3127024}
+--- !u!65 &3573139768335338508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3573139769339459619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 5, z: 181.49518}
+  m_Center: {x: -0.0000009579692, y: 0, z: 2.3127024}
+--- !u!114 &3573139768335338505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3573139769339459619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d7503e95a64044e8f7ff3876e677ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: "Try free \"Old Narva\" app \nin App Store\n"

@@ -10,15 +10,28 @@ namespace InvisibleNarva {
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private TextMeshProUGUI message;
 
+        private Sequence _sequence;
+
         private void OnEnable() {
-            BuildingArea.OnEnter += BuildingEnterHandler;
             canvasGroup.alpha = 0;
+            _sequence = DOTween.Sequence()
+                            .Append(canvasGroup.DOFade(1, fadeDuration))
+                            .Append(canvasGroup.DOFade(0, fadeDuration).SetDelay(displayDuration)).SetAutoKill(false);
+
+            _sequence.Pause();
+
+            BuildingArea.OnEnter += BuildingEnterHandler;
         }
 
         private void BuildingEnterHandler(string buildingName) {
             message.text = buildingName;
-          //message.SetDynamicText(holder, buildingName, Vector2.zero);
-            canvasGroup.DOFade(1, fadeDuration).OnComplete(() => canvasGroup.DOFade(0, fadeDuration).SetDelay(displayDuration));
+
+            if (_sequence.IsPlaying()) {
+                _sequence.Restart();
+                return;
+            }
+
+            _sequence.Play();
         }
 
         private void OnDisable() {
