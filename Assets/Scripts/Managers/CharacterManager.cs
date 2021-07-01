@@ -24,9 +24,17 @@ namespace InvisibleNarva {
 
         public void Play(Character character) {
             _current = character;
+            _current.OnEnd += CharacterEndHandler;
             _videoPlayer.isLooping = character.IsLooping;
             StopCoroutine(PlayUntilStop());
             StartCoroutine(PlayUntilStop());
+        }
+
+        private void CharacterEndHandler(object entity) {
+            StopAllCoroutines();
+            Stop();
+
+            _current.OnEnd -= CharacterEndHandler;
         }
 
         private IEnumerator PlayUntilStop() {
@@ -46,13 +54,18 @@ namespace InvisibleNarva {
 
             yield return null;
             yield return _waitUntilVideoStop;
+            _current.OnEnd -= CharacterEndHandler;
+            _current.End();
+
+            Stop();
+        }
+
+        private void Stop() {
             _audioSource.Stop();
             _videoPlayer.Stop();
-
             _audioSource.clip = null;
             _videoPlayer.clip = null;
 
-            _current.End();
             OnStop?.Invoke();
             SoundManager.Instance.FadeOut();
         }

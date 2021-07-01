@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 114529931284037998}
   - component: {fileID: 5461264843477190942}
   m_Layer: 5
-  m_Name: Fixed Joystick
+  m_Name: MoveStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 60
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &114316388440454702
 MonoBehaviour:
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 114681075214204278}
   - component: {fileID: 1091553918774167246}
   m_Layer: 5
-  m_Name: Look Stick
+  m_Name: LookStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

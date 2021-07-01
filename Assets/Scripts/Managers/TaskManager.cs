@@ -40,6 +40,7 @@ namespace InvisibleNarva {
 
         private void TaskCompletedHandler(Task task) {
             CheckList[task] = true;
+            availableTasks.Remove(task);
 
             if (CheckList.Values.All(v => v == true)) {
                 OnGameOver?.Invoke();

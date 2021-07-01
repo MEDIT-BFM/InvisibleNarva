@@ -29,15 +29,15 @@ namespace InvisibleNarva {
         }
 
         public void Skip() {
+            if (_current == null) {
+                return;
+            }
+
             if (!_current.IsSkippable) {
                 return;
             }
 
-            Begin(GetNext());
-
-            if (_current == null) {
-                Complete();
-            }
+            _current.End();
         }
 
         private void Awake() {
@@ -45,10 +45,9 @@ namespace InvisibleNarva {
         }
 
         private void EntityEndHandler(object sender) {
-            if (_entityQueue.Count > 0) {
-                Begin(GetNext());
-            }
-            else {
+            Begin(GetNext());
+
+            if (_current == null) {
                 Complete();
             }
         }
@@ -70,10 +69,12 @@ namespace InvisibleNarva {
         }
 
         private void Complete() {
-            minimapIcon.Complete();
-            enabled = false;
+            if (minimapIcon) {
+                minimapIcon.Complete();
+            }
+
             OnCompleted?.Invoke(this);
-            _current.OnEnd -= EntityEndHandler;
+            enabled = false;
         }
 
         private Entity GetNext() {
@@ -87,7 +88,7 @@ namespace InvisibleNarva {
                 return _current;
             }
 
-            return null;
+            return _current = null;
         }
     }
 }
