@@ -7,6 +7,7 @@ namespace InvisibleNarva {
     public class Task : MonoBehaviour {
         public static event Action<Task> OnInitiated = delegate { };
         public static event Action<Task> OnCompleted = delegate { };
+        public static event Action<Entity> OnSkip = delegate { };
 
         [SerializeField] private MinimapIconUI minimapIcon;
         [SerializeField] private List<Entity> entities;
@@ -37,6 +38,7 @@ namespace InvisibleNarva {
                 return;
             }
 
+            OnSkip?.Invoke(_current);
             _current.End();
         }
 

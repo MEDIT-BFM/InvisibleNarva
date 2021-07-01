@@ -702,6 +702,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5464347044910035382, guid: 51663725c0bcf5946b20eb25ba1709f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5464347045407613185, guid: 51663725c0bcf5946b20eb25ba1709f7,
         type: 3}
       propertyPath: m_Name
@@ -811,6 +816,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464347045860207477, guid: 51663725c0bcf5946b20eb25ba1709f7,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Are you sure?</b>
+
+
+        Changes will be discarded'
       objectReference: {fileID: 0}
     - target: {fileID: 5464347046080147156, guid: 51663725c0bcf5946b20eb25ba1709f7,
         type: 3}

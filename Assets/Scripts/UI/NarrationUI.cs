@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace InvisibleNarva {
     public class NarrationUI : MonoBehaviour {
         [SerializeField] private RectTransform content;
         [SerializeField] private TextMeshProUGUI subtitle;
-        [SerializeField] private CanvasGroup canvasGroup;
 
+        private Image _contentImage;
         private Vector2 _subtitleSize;
         private readonly Vector2 _textPaddingSize = new Vector2(60, 30);
 
@@ -15,6 +16,7 @@ namespace InvisibleNarva {
             NarrationManager.OnStop += NarrationStopHander;
             gameObject.SetActive(false);
             _subtitleSize = subtitle.rectTransform.sizeDelta;
+            _contentImage = content.GetComponent<Image>();
         }
 
         private void NarrationPlayHandler(Speech narration, bool showSubtitle) {
@@ -23,6 +25,8 @@ namespace InvisibleNarva {
             if (!showSubtitle) {
                 return;
             }
+
+            _contentImage.raycastTarget = narration.IsSkippable;
 
             var width = subtitle.GetPreferredValues(narration.Subtitle).x;
 

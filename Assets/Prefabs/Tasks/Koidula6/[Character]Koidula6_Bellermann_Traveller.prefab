@@ -49,7 +49,7 @@ MonoBehaviour:
   OnEndEvent:
     m_PersistentCalls:
       m_Calls: []
-  initialDelay: 2
+  initialDelay: 0
   isSkippable: 1
   isPlayingOnUI: 1
   isLooping: 1

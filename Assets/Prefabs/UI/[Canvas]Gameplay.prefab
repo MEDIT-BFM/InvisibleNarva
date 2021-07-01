@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 2826469999767096144}
   - component: {fileID: 2826973778825911478}
   m_Layer: 5
-  m_Name: '[Button]ReturnMenu'
+  m_Name: '[Button]ReturnMap'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2715971842576115326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2785631080559860852}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!114 &2826322367417761984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,7 +1232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.6, y: 12}
+  m_AnchoredPosition: {x: -0.000022888, y: 44}
   m_SizeDelta: {x: 436.7, y: 553.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2718760022459482706
@@ -1338,7 +1338,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Return Menu
+  m_text: 'Return
+
+    Map'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 495066d128cacc441b2716895bffbf23, type: 2}
   m_sharedMaterial: {fileID: 1846971010392827001, guid: 495066d128cacc441b2716895bffbf23,
@@ -1836,7 +1838,7 @@ GameObject:
   - component: {fileID: 2718470492250164788}
   - component: {fileID: 2826861835605680800}
   m_Layer: 5
-  m_Name: QuitRestartPanel
+  m_Name: RestartGameValidation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1861,7 +1863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 44}
   m_SizeDelta: {x: 528, y: 529.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2718470492250164788
@@ -2035,20 +2037,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2785631080559860852}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2786002965698112284}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 2785729041258618156}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3018,7 +3008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 119}
+  m_AnchoredPosition: {x: 0, y: 81}
   m_SizeDelta: {x: 421.6, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2718484164523674586
@@ -3052,7 +3042,7 @@ MonoBehaviour:
   m_text: 'Are you sure?
 
 
-    Changes will not be saved.'
+    Changes will be discarded'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56ddf7768368b7f409c3127bc80d5091, type: 2}
   m_sharedMaterial: {fileID: -5657365355237775231, guid: 56ddf7768368b7f409c3127bc80d5091,
@@ -3326,18 +3316,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: QuestSelection
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2786213732968582624
@@ -3618,20 +3596,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2785631080559860852}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2786002965698112284}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 2785729041258618156}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3707,7 +3673,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: 'Restart
+
+    Game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 495066d128cacc441b2716895bffbf23, type: 2}
   m_sharedMaterial: {fileID: 1846971010392827001, guid: 495066d128cacc441b2716895bffbf23,
@@ -4144,7 +4112,7 @@ GameObject:
   - component: {fileID: 2827068317532165440}
   - component: {fileID: 7707973782223880843}
   m_Layer: 9
-  m_Name: '[Canvas]Minimap'
+  m_Name: '[Canvas]Gameplay'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4397,7 +4365,7 @@ GameObject:
   - component: {fileID: 2718612918986263120}
   - component: {fileID: 2826698734664954192}
   m_Layer: 5
-  m_Name: QuitQuestionPanel
+  m_Name: ReturnMapValidation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4422,7 +4390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 90}
+  m_AnchoredPosition: {x: 0, y: 44}
   m_SizeDelta: {x: 528, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2718612918986263120

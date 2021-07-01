@@ -10,7 +10,7 @@ namespace InvisibleNarva {
         public event Action<object> OnEnd;
 
         [SerializeField] private float initialDelay;
-        [SerializeField] private bool isSkippable = true;
+        [SerializeField] private bool isSkippable;
 
         public bool IsSkippable { get => isSkippable; }
         public bool IsPlaying { get; private set; }
@@ -26,9 +26,9 @@ namespace InvisibleNarva {
         }
 
         protected void TriggerEnd(object entity) {
-            IsPlaying = false;
-            OnEndEvent?.Invoke();
             OnEnd?.Invoke(entity);
+            OnEndEvent?.Invoke();
+            IsPlaying = false;
         }
     }
 }

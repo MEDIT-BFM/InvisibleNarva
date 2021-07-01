@@ -43,7 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0887fc17c67681458744ed5b5743803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnBeginEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
   initialDelay: 1
+  isSkippable: 1
   questionData:
     Character: {fileID: 3186029285154905438, guid: 795aa610b56e8084281042878561be8d,
       type: 3}

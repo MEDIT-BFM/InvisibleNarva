@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
-using System.Collections;
+using System;
 
 namespace InvisibleNarva {
     public class QuestionUI : MonoBehaviour {
@@ -34,6 +35,7 @@ namespace InvisibleNarva {
             _transform = transform;
             Question.OnQuestionBegin += QuestionBeginHandler;
             submit.onClick.AddListener(Submit);
+
             skip.onClick.AddListener(() => {
                 submit.interactable = false;
                 gameObject.SetActive(false);
@@ -45,12 +47,17 @@ namespace InvisibleNarva {
 
         private void QuestionBeginHandler(Question q) {
             _current = q;
-            var questionCharacter = _current.Data.Character;
-            question.text = _current.Data.Question;
             skip.gameObject.SetActive(false);
             submit.gameObject.SetActive(false);
-            Show(questionCharacter.Begin);
-            questionCharacter.OnEnd += (sender) => StartCoroutine(ReadAnswerCor());
+
+            question.text = _current.Data.Question;
+            _current.Data.Character.OnEnd += CharacterEndHandler;
+            Show(_current.Data.Character.Begin);
+        }
+
+        private void CharacterEndHandler(object sender) {
+            StartCoroutine(ReadAnswerCor());
+            _current.Data.Character.OnEnd -= CharacterEndHandler;
         }
 
         private void Submit() {
@@ -75,9 +82,7 @@ namespace InvisibleNarva {
             DOTween.Sequence()
                .Append(_transform.DOScale(1.1f, 0.15f))
                .Append(_transform.DOScale(1, 0.15f))
-               .AppendCallback(() => {
-                   callback();
-               });
+               .AppendCallback(callback);
         }
 
         private void Hide(TweenCallback callback = null) {
@@ -93,6 +98,7 @@ namespace InvisibleNarva {
         private IEnumerator ReadAnswerCor() {
             int count = 0;
             var a = _current.Data.Answers;
+            yield return new WaitUntil(() => _current.Data.Character.IsPlaying == false);
 
             do {
                 a[count].Character.Begin();

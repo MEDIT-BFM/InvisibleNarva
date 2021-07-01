@@ -18,6 +18,10 @@ namespace InvisibleNarva {
             _waitUntilNarrationStop = new WaitUntil(() => !_audioSource.isPlaying);
         }
 
+        private void OnEnable() {
+            Task.OnSkip += (entity) => Stop();
+        }
+
         public void Play(Speech speech, bool showSubtitle) {
             _current = speech;
             _current.OnEnd += SpeechEndHandler;
@@ -25,9 +29,7 @@ namespace InvisibleNarva {
         }
 
         private void SpeechEndHandler(object entity) {
-            StopAllCoroutines();
             Stop();
-
             _current.OnEnd -= SpeechEndHandler;
         }
 
@@ -50,6 +52,7 @@ namespace InvisibleNarva {
             _audioSource.clip = null;
             OnStop?.Invoke();
             SoundManager.Instance.FadeOut();
+            StopAllCoroutines();
         }
     }
 }
