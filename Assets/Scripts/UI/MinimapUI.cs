@@ -44,8 +44,8 @@ namespace InvisibleNarva {
         }
 
         private void Start() {
-            Task.OnInitiated += (task) => gameObject.SetActive(false);
-            Task.OnCompleted += (task) => gameObject.SetActive(true);
+           // Task.OnInitiated += (task) => gameObject.SetActive(false);
+            //Task.OnCompleted += (task) => gameObject.SetActive(true);
 
             _minimapHideTween = DOTween.Sequence()
                     .Append(minimap.DOScale(0, _minimapHideTweenDuration * 0.75f))

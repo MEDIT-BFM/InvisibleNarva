@@ -61,6 +61,13 @@ namespace InvisibleNarva {
             }
 
             Begin(GetNext());
+
+            if (_current == null)
+            {
+                OnCompleted?.Invoke(this);
+                return;
+            }
+
             OnInitiated?.Invoke(this);
         }
 
