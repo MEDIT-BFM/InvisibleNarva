@@ -9,6 +9,7 @@ namespace InvisibleNarva {
         [SerializeField] private float entranceClipDelay;
         [SerializeField] private AudioClip entranceClip;
         [SerializeField] private VideoClip[] videoClips;
+        [SerializeField] private Quest[] quests;
 
         private VideoPlayer _videoPlayer;
         private Queue<VideoClip> _clips;
@@ -33,6 +34,10 @@ namespace InvisibleNarva {
             _videoPlayer = GetComponent<VideoPlayer>();
 
             SoundManager.Instance.Play(entranceClip, entranceClipDelay);
+
+            for (int i = 0; i < quests.Length; i++) {
+                quests[i].IsCompleted = false;
+            }
         }
     }
 }

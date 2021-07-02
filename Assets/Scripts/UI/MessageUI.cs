@@ -6,15 +6,15 @@ namespace InvisibleNarva {
     public class MessageUI : MonoBehaviour {
         [SerializeField] private float fadeDuration = 1.5f;
         [SerializeField] private float displayDuration = 3;
-        [SerializeField] private RectTransform holder;
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private TextMeshProUGUI message;
 
         private Sequence _sequence;
 
         private void OnEnable() {
-            canvasGroup.alpha = 0;
+
             _sequence = DOTween.Sequence()
+                            .AppendCallback(() => canvasGroup.alpha = 0)
                             .Append(canvasGroup.DOFade(1, fadeDuration))
                             .Append(canvasGroup.DOFade(0, fadeDuration).SetDelay(displayDuration)).SetAutoKill(false);
 
@@ -31,7 +31,7 @@ namespace InvisibleNarva {
                 return;
             }
 
-            _sequence.Play();
+            _sequence.Restart();
         }
 
         private void OnDisable() {

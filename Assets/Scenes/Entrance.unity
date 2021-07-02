@@ -1361,11 +1361,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 398854159651208811, guid: 299d40347f4b7d449890824117d0fb23,
         type: 3}
-      propertyPath: m_AspectRatio
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 398854159651208811, guid: 299d40347f4b7d449890824117d0fb23,
-        type: 3}
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 1594555595}
