@@ -64,7 +64,7 @@ namespace InvisibleNarva {
 
             if (_current == null)
             {
-                OnCompleted?.Invoke(this);
+                Complete();
                 return;
             }
 

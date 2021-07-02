@@ -15,16 +15,15 @@ namespace InvisibleNarva {
         private WaitUntil _waitUntilVideoStop;
         private WaitUntil _waitUntilVideoPrepared;
 
-        protected override void Awake() {
-            base.Awake();
+        private void OnEnable() {
+            Task.OnSkip += TaskSkipHandler;
+        }
+
+        private void Start() {
             _audioSource = GetComponent<AudioSource>();
             _videoPlayer = GetComponent<VideoPlayer>();
             _waitUntilVideoStop = new WaitUntil(() => _audioSource.isPlaying == false);
             _waitUntilVideoPrepared = new WaitUntil(() => _videoPlayer.isPrepared == false);
-        }
-
-        private void OnEnable() {
-            Task.OnSkip += (entity) => Stop();
         }
 
         public void Play(Character character) {
@@ -32,6 +31,10 @@ namespace InvisibleNarva {
             _current.OnEnd += CharacterEndHandler;
             _videoPlayer.isLooping = character.IsLooping;
             StartCoroutine(PlayUntilStop());
+        }
+
+        private void TaskSkipHandler(Entity entity) {
+            Stop();
         }
 
         private void CharacterEndHandler(object entity) {
@@ -71,6 +74,11 @@ namespace InvisibleNarva {
             OnStop?.Invoke();
             SoundManager.Instance.FadeOut();
             StopAllCoroutines();
+        }
+
+        private void OnDisable() {
+            Stop();
+            Task.OnSkip -= TaskSkipHandler;
         }
     }
 }

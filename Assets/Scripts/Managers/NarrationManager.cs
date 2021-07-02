@@ -12,20 +12,23 @@ namespace InvisibleNarva {
         private AudioSource _audioSource;
         private WaitUntil _waitUntilNarrationStop;
 
-        protected override void Awake() {
-            base.Awake();
-            _audioSource = GetComponent<AudioSource>();
-            _waitUntilNarrationStop = new WaitUntil(() => !_audioSource.isPlaying);
+        private void OnEnable() {
+            Task.OnSkip += TaskSkipHandler;
         }
 
-        private void OnEnable() {
-            Task.OnSkip += (entity) => Stop();
+        private void Start() {
+            _audioSource = GetComponent<AudioSource>();
+            _waitUntilNarrationStop = new WaitUntil(() => !_audioSource.isPlaying);
         }
 
         public void Play(Speech speech, bool showSubtitle) {
             _current = speech;
             _current.OnEnd += SpeechEndHandler;
             StartCoroutine(PlayNarrationUntilStop(showSubtitle));
+        }
+
+        private void TaskSkipHandler(Entity entity) {
+            Stop();
         }
 
         private void SpeechEndHandler(object entity) {
@@ -53,6 +56,11 @@ namespace InvisibleNarva {
             OnStop?.Invoke();
             SoundManager.Instance.FadeOut();
             StopAllCoroutines();
+        }
+
+        private void OnDisable() {
+            Stop();
+            Task.OnSkip -= TaskSkipHandler;
         }
     }
 }

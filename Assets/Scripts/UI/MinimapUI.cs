@@ -41,6 +41,8 @@ namespace InvisibleNarva {
         private void OnEnable() {
             compass.onValueChanged.AddListener(CompassChangedHandler);
             zoomSlider.onValueChanged.AddListener(ZoomValueChangedHandler);
+            Task.OnInitiated += TaskInitiatedHandler;
+            Task.OnCompleted += TaskCompletedHandler;
         }
 
         private void Start() {
@@ -68,6 +70,14 @@ namespace InvisibleNarva {
             _mapCamTransform.position = position;
         }
 
+        private void TaskCompletedHandler(Task task) {
+            Display();
+        }
+
+        private void TaskInitiatedHandler(Task task) {
+            Hide();
+        }
+
         private void ZoomValueChangedHandler(float value) {
             minimapCamera.orthographicSize = 60 + (value * 70f);
         }
@@ -88,6 +98,8 @@ namespace InvisibleNarva {
         private void OnDisable() {
             compass.onValueChanged.RemoveAllListeners();
             zoomSlider.onValueChanged.RemoveAllListeners();
+            Task.OnInitiated -= TaskInitiatedHandler;
+            Task.OnCompleted -= TaskCompletedHandler;
         }
     }
 }

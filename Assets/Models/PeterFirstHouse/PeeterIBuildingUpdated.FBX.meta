@@ -4,270 +4,9 @@ ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      1: 100000
-    second: //RootNode
-  - first:
-      4: 400000
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: Material #25
-  - first:
-      21: 2100002
-    second: Seinad
-  - first:
-      21: 2100004
-    second: Katus
-  - first:
-      21: 2100006
-    second: tellis
-  - first:
-      21: 2100008
-    second: Material #43
-  - first:
-      21: 2100010
-    second: Material #55
-  - first:
-      21: 2100012
-    second: Aknalaud
-  - first:
-      21: 2100014
-    second: Esiuks
-  - first:
-      21: 2100016
-    second: Graniit
-  - first:
-      21: 2100018
-    second: ValgeKrohv
-  - first:
-      21: 2100020
-    second: Sammas
-  - first:
-      21: 2100022
-    second: Rodupiire
-  - first:
-      21: 2100024
-    second: Katusmetall
-  - first:
-      21: 2100026
-    second: Roduuks
-  - first:
-      21: 2100028
-    second: voluutesikylg
-  - first:
-      21: 2100030
-    second: Tume puit
-  - first:
-      23: 2300000
-    second: //RootNode
-  - first:
-      33: 3300000
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: PeeterIBuildingUpdated
-  - first:
-      74: 7400000
+      74: 1827226128182048838
     second: Take 001
-  - first:
-      95: 9500000
-    second: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Aknalaud
-    second: {fileID: 2100000, guid: 6ce37d5c42d6a4997bb079d48527064d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Esiuks
-    second: {fileID: 2100000, guid: 88a9873ab6ea64288baa4e85f40802e6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Graniit
-    second: {fileID: 2100000, guid: 9ef7137d4a538406db7323b0b5a5a48b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Katus
-    second: {fileID: 2100000, guid: 8d8da1663edfb458a8e1c59fdaf0b7af, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Katusmetall
-    second: {fileID: 2100000, guid: 839a5f6e0c5bb4588a5098f15757072e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #25
-    second: {fileID: 2100000, guid: 34da6839197eb44bf95e9f24ff0bb9a8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #43
-    second: {fileID: 2100000, guid: 9c0782a79250642aaacc23b78c5fce78, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #55
-    second: {fileID: 2100000, guid: 02d3db767518c4cdfa5af6942149cbf8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rodupiire
-    second: {fileID: 2100000, guid: cea8cc5e83d834c3a8faa2f4e8ac3ee1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Roduuks
-    second: {fileID: 2100000, guid: d8269365393084103a0b94d68a6a9bd0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sammas
-    second: {fileID: 2100000, guid: 3d47587e79a424a2495e9226019719b8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Seinad
-    second: {fileID: 2100000, guid: 375ca630ddc6c4d9ea472815e9308085, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tume puit
-    second: {fileID: 2100000, guid: 5e576f0ba6f9e46a78d36f73a885873f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ValgeKrohv
-    second: {fileID: 2100000, guid: f0273b3753e93439cbbb7837f191927b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tellis
-    second: {fileID: 2100000, guid: 0a92d1614aee14c8a9059100bcd61acf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: voluutesikylg
-    second: {fileID: 2100000, guid: ca2f1ad68b30f4bd6b13d91f50c95f08, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Dark-Mahogany-Texture-Dark-mahogany-wood-car-wallpaper-wpt7803529
-    second: {fileID: 2800000, guid: 6075f4fafa05d4cd6965860cebe747c2, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Rodupiirdefoto
-    second: {fileID: 2800000, guid: 0e99a4933b8bd48d7aac365e4c3f929d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Rodupiirdefoto_normal
-    second: {fileID: 2800000, guid: 44edc15216f3f42bfa00c0d34ea2076d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_BrickOldRounded0246_2_M
-    second: {fileID: 2800000, guid: daf7b818d6bc54344a0f7793fa9b15bd, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_BuildingsHouseOld0087_M
-    second: {fileID: 2800000, guid: 73a027f5373dd4907b71a8895e440823, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_MarbleGranite0037_1_M
-    second: {fileID: 2800000, guid: dc623a26fe1344ef59d8b2b3be88c557, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_PlasterWhite0147_1_seamless_S
-    second: {fileID: 2800000, guid: 5bc7375e7b239464788c7900ac03f5f5, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_PlasterWhite0147_1_seamless_S_normal
-    second: {fileID: 2800000, guid: a1d72210223bc47698c736fdb6ef1b35, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_RooftilesCeramic0034_2_M
-    second: {fileID: 2800000, guid: cf2db3c74d69243ea8b1cb86040bbf72, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_RooftilesCeramic0034_2_M_normal
-    second: {fileID: 2800000, guid: 8ab25eb7a89cc461a89ad35c5d45f23d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_RooftilesMetal0063_1_M
-    second: {fileID: 2800000, guid: b2db01da3ef554a4f906f35fe6809806, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_RooftilesMetal0063_1_M_normal
-    second: {fileID: 2800000, guid: 7f6e5b74db8f3417c907d25097941831, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: TexturesCom_WoodPlanksBare0478_2_seamless_S
-    second: {fileID: 2800000, guid: 7a0e3590cd3494b43a5815e76dc09143, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: aknalaud
-    second: {fileID: 2800000, guid: b68e054bab0dd4305b554124b9627e88, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: barokkkollane2
-    second: {fileID: 2800000, guid: 016832f0a6e2840dcba3cee74c933d31, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: barokkkollane_normal
-    second: {fileID: 2800000, guid: 97e1797b2642d4465ab66c042604544e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: graniit_normal
-    second: {fileID: 2800000, guid: 02768fdef2a9848a7b29a90b5b284292, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: puiduplank_normal
-    second: {fileID: 2800000, guid: b20ce6ff4f3da487caeedfb66326e124, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: tellis_normal
-    second: {fileID: 2800000, guid: e06669544c19f4a7381fb5e65ac564b1, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: torniuks_normal
-    second: {fileID: 2800000, guid: 4ef414ccb879c497f84fa41526db2d21, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: voluutalpha
-    second: {fileID: 2800000, guid: 38ebe2219fd19477189b952f81608043, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: voluutalpha_normal
-    second: {fileID: 2800000, guid: d6c7750220a76466b8ca6c88ecef29dc, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: white-wood-texture-stock-picture-3949993_normal
-    second: {fileID: 2800000, guid: 5afd94bfb320f46a79519dc5d48391bd, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -303,11 +42,11 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
-    fileIdsGeneration: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -323,7 +62,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -332,7 +71,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 4
+    normalCalculationMode: 1
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
@@ -356,10 +95,10 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
