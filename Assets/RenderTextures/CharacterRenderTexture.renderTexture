@@ -14,8 +14,13 @@ RenderTexture:
   m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 0
   serializedVersion: 3
+<<<<<<< Updated upstream
   m_Width: 484
   m_Height: 782
+=======
+  m_Width: 363
+  m_Height: 587
+>>>>>>> Stashed changes
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthFormat: 0
