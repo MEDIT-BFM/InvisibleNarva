@@ -44,15 +44,13 @@ namespace InvisibleNarva {
         }
 
         private void Start() {
-           // Task.OnInitiated += (task) => gameObject.SetActive(false);
-            //Task.OnCompleted += (task) => gameObject.SetActive(true);
-
             _minimapHideTween = DOTween.Sequence()
                     .Append(minimap.DOScale(0, _minimapHideTweenDuration * 0.75f))
                     .AppendCallback(() => minimapShowButton.gameObject.SetActive(_minimapDisplayToggle = !_minimapDisplayToggle))
                     .Append(minimapShowButton.DOScale(1, _minimapHideTweenDuration))
                     .Join(minimapShowButton.DOPunchRotation(_axisZ_90, _minimapHideTweenDuration))
                     .AppendCallback(() => minimap.gameObject.SetActive(_minimapDisplayToggle = !_minimapDisplayToggle))
+                    .SetUpdate(true)
                     .SetAutoKill(false);
 
             _minimapHideTween.Pause();

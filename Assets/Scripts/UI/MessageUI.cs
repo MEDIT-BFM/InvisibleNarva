@@ -25,12 +25,6 @@ namespace InvisibleNarva {
 
         private void BuildingEnterHandler(string buildingName) {
             message.text = buildingName;
-
-            if (_sequence.IsPlaying()) {
-                _sequence.Restart();
-                return;
-            }
-
             _sequence.Restart();
         }
 

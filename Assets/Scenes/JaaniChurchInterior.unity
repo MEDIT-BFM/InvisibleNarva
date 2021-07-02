@@ -631,6 +631,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChurchInterior
       objectReference: {fileID: 0}
+    - target: {fileID: 5946808570938282249, guid: 50caaaa6997647640a99ca3496abe2b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946808570938282251, guid: 50caaaa6997647640a99ca3496abe2b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946808570938282253, guid: 50caaaa6997647640a99ca3496abe2b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50caaaa6997647640a99ca3496abe2b4, type: 3}
 --- !u!4 &8821741459118064491 stripped

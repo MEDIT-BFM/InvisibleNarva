@@ -29,8 +29,8 @@ namespace InvisibleNarva {
         }
 
         private void OnEnable() {
-            Task.OnCompleted += TaskCompletedHandler;
             Task.OnInitiated += TaskInitiatedHandler;
+            Task.OnCompleted += TaskCompletedHandler;
         }
 
         private void TaskInitiatedHandler(Task task) {
@@ -65,6 +65,7 @@ namespace InvisibleNarva {
         }
 
         private void OnDisable() {
+            Task.OnInitiated -= TaskInitiatedHandler;
             Task.OnCompleted -= TaskCompletedHandler;
         }
     }
