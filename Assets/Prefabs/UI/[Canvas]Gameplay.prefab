@@ -64,7 +64,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 1.5
   displayDuration: 3
-  holder: {fileID: 0}
   canvasGroup: {fileID: 8947348197848970207}
   message: {fileID: 363381380244684490}
 --- !u!1 &2785487386451626064
@@ -827,7 +826,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7707973782223880843}
+      - m_Target: {fileID: 2558408297424905200}
         m_TargetAssemblyTypeName: InvisibleNarva.MinimapUI, Assembly-CSharp
         m_MethodName: Display
         m_Mode: 1
@@ -1046,7 +1045,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7707973782223880843}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MinimapUI, Assembly-CSharp
         m_MethodName: Display
         m_Mode: 1
@@ -1678,18 +1677,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Entrance
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2785882536354681282
@@ -2352,7 +2339,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7707973782223880843}
+      - m_Target: {fileID: 2558408297424905200}
         m_TargetAssemblyTypeName: InvisibleNarva.MinimapUI, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -3783,7 +3770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.000244, y: -15.000122}
+  m_AnchoredPosition: {x: -15.000244, y: -15.000244}
   m_SizeDelta: {x: 573.5, y: 479.8}
   m_Pivot: {x: 1, y: 1.0000001}
 --- !u!1 &2786294109609382290
@@ -4110,7 +4097,7 @@ GameObject:
   - component: {fileID: 2717397150749343320}
   - component: {fileID: 2826681061864821208}
   - component: {fileID: 2827068317532165440}
-  - component: {fileID: 7707973782223880843}
+  - component: {fileID: 2558408297424905200}
   m_Layer: 9
   m_Name: '[Canvas]Gameplay'
   m_TagString: Untagged
@@ -4203,7 +4190,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7707973782223880843
+--- !u!114 &2558408297424905200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4341,7 +4328,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7707973782223880843}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MinimapUI, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -4524,8 +4511,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
-  m_fontSizeBase: 110
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

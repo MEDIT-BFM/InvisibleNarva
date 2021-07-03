@@ -6,6 +6,7 @@ using UnityEngine;
 namespace InvisibleNarva {
     public class TaskManager : Singleton<TaskManager> {
         public static event Action OnGameOver = delegate { };
+        public static event Action<Task> OnSkip = delegate { };
         public static event Action<Task> OnNextPointed = delegate { };
 
         [SerializeField] private PlayerController player;
@@ -18,6 +19,7 @@ namespace InvisibleNarva {
 
         public void Skip() {
             _current.Skip();
+            OnSkip?.Invoke(_current);
         }
 
         private void Start() {

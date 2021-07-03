@@ -23,7 +23,6 @@ namespace InvisibleNarva {
 
         public void Play(Speech speech, bool showSubtitle) {
             _current = speech;
-            _current.OnEnd += SpeechEndHandler;
             StartCoroutine(PlayNarrationUntilStop(showSubtitle));
         }
 
@@ -31,21 +30,14 @@ namespace InvisibleNarva {
             Stop();
         }
 
-        private void SpeechEndHandler(object entity) {
-            Stop();
-            _current.OnEnd -= SpeechEndHandler;
-        }
-
         private IEnumerator PlayNarrationUntilStop(bool showSubtitle = false) {
             _audioSource.clip = _current.Voice;
             _audioSource.Play();
 
             OnPlay?.Invoke(_current, showSubtitle);
-            SoundManager.Instance.FadeIn();
 
             yield return null;
             yield return _waitUntilNarrationStop;
-            _current.OnEnd -= SpeechEndHandler;
             _current.End();
             Stop();
         }
@@ -54,12 +46,10 @@ namespace InvisibleNarva {
             _audioSource.Stop();
             _audioSource.clip = null;
             OnStop?.Invoke();
-            SoundManager.Instance.FadeOut();
             StopAllCoroutines();
         }
 
         private void OnDisable() {
-            Stop();
             Task.OnSkip -= TaskSkipHandler;
         }
     }

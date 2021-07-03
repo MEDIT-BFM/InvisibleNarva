@@ -37,8 +37,14 @@ namespace InvisibleNarva {
         }
 
         private void OnEnable() {
-            Question.OnQuestionBegin += QuestionBeginHandler;
+            QuestionManager.OnPlay += QuestionPlayHandler;
+            QuestionManager.OnStop += QuestionStopHandler;
             TaskManager.OnGameOver += GameOverHandler;
+        }
+
+        private void QuestionStopHandler() {
+            moveStick.Enable();
+            lookStick.Enable();
         }
 
         private void Start() {
@@ -47,14 +53,14 @@ namespace InvisibleNarva {
             Locate(startPosition);
         }
 
-        private void QuestionBeginHandler(Question q) {
+        private void QuestionPlayHandler(Question q) {
             moveStick.Disable();
             lookStick.Disable();
 
-            q.OnEnd += (q) => {
-                moveStick.Enable();
-                lookStick.Enable();
-            };
+            //q.OnEnd += (q) => {
+            //    moveStick.Enable();
+            //    lookStick.Enable();
+            //};
         }
 
         private void GameOverHandler() {
@@ -80,7 +86,8 @@ namespace InvisibleNarva {
         }
 
         private void OnDisable() {
-            Question.OnQuestionBegin -= QuestionBeginHandler;
+            QuestionManager.OnPlay -= QuestionPlayHandler;
+            QuestionManager.OnStop -= QuestionStopHandler;
             TaskManager.OnGameOver -= GameOverHandler;
         }
     }
