@@ -19,12 +19,13 @@ namespace InvisibleNarva {
             _creditsCanvasGroup.DOFade(1, 0.75f).OnComplete(() => {
                 DOTween.Sequence()
                 .Append(_creditsRect.DOAnchorPosY(0, _creditsHeight * _speedMultiplier))
-                .OnComplete(() => SceneController.Instance.ChangeScene("Entrance"));
+                .OnComplete(() => Skip());
             });
         }
 
         public void Skip() {
             SceneController.Instance.ChangeScene("Entrance");
+            SceneController.Instance.Unload("JaaniChurchInterior");
         }
 
         private void Awake() {

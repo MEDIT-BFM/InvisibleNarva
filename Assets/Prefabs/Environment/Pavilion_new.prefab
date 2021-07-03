@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9109192607460753797}
   - component: {fileID: 5315797857471499808}
   - component: {fileID: 7935754539679873770}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pavilion_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}

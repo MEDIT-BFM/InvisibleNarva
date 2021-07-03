@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 878662314105014228}
   - component: {fileID: 3158525210732294942}
   - component: {fileID: 6625407667514914906}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Chimney
   m_TagString: Untagged
   m_Icon: {fileID: 0}

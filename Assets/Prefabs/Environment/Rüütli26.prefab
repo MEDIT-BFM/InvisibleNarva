@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8177372640298128874}
   - component: {fileID: 4595749324014677111}
   - component: {fileID: 80536828058583709}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 7513304162924743557}
   - component: {fileID: 9078185773644558800}
   - component: {fileID: 985778770811287634}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: "R\xFC\xFCtli26"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

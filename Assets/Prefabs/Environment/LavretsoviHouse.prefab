@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1584266471504689886}
   - component: {fileID: 5842349184886992923}
   - component: {fileID: 4798667771631765017}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 9114675547021390505}
   - component: {fileID: 7831289333072850547}
   - component: {fileID: 816803195495403890}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LavretsoviHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}

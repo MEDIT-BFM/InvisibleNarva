@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9098039914077635807}
   - component: {fileID: 9098039914076308735}
   - component: {fileID: 9098039914075342399}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ferns
   m_TagString: Untagged
   m_Icon: {fileID: 0}

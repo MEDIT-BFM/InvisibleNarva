@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 321001587106326938}
   - component: {fileID: 2562718027252489552}
   - component: {fileID: 6749174527160851287}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stage_GloomyGarden_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 194750603734494669, guid: 44ac817d3f431ef44a6d9e7fa83920ce,
         type: 3}
+      propertyPath: MaxDistance
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 194750603734494669, guid: 44ac817d3f431ef44a6d9e7fa83920ce,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194750603734494669, guid: 44ac817d3f431ef44a6d9e7fa83920ce,
+        type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -126,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 194750603734494669, guid: 44ac817d3f431ef44a6d9e7fa83920ce,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.9
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 194750603734494669, guid: 44ac817d3f431ef44a6d9e7fa83920ce,
         type: 3}
@@ -252,6 +262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '[VideoScreen]ArthurRinneSinging'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054641089013473724, guid: 44ac817d3f431ef44a6d9e7fa83920ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8054641089013473721, guid: 44ac817d3f431ef44a6d9e7fa83920ce, type: 3}

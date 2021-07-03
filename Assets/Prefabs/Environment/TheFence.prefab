@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3292767111443521685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TheFence
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517245104618397988, guid: 5f83b2ceb21056e47bb926ae83b645c1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7517245104618397988, guid: 5f83b2ceb21056e47bb926ae83b645c1,
         type: 3}
