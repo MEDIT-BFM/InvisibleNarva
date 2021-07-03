@@ -29,11 +29,17 @@ public class SceneController : Singleton<SceneController> {
         });
     }
 
-    public void LoadAdditiveScene(string sceneName, UnityAction onLoadBegin = null, UnityAction onLoadComplete=null) {
+    public void LoadAdditiveScene(string sceneName, UnityAction onLoadBegin = null, UnityAction onLoadComplete = null) {
         onLoadBegin();
 
         var opr = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         opr.completed += (opr) => onLoadComplete();
+    }
+
+    public void Unload(string sceneName) {
+        if (SceneManager.GetSceneByName(sceneName).isLoaded) {
+            SceneManager.UnloadSceneAsync(sceneName);
+        }
     }
 
     public void Unload(string sceneName, UnityAction onUnloadBegin = null, UnityAction onUnloadComplete = null) {
