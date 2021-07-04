@@ -50,6 +50,7 @@ namespace InvisibleNarva {
         }
 
         private void OnDisable() {
+            Stop();
             Task.OnSkip -= TaskSkipHandler;
         }
     }
