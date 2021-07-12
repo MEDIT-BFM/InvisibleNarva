@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &894594664689285093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595827961603196535}
+  - component: {fileID: 1864786272471346505}
+  - component: {fileID: 5620008034700184511}
+  m_Layer: 0
+  m_Name: '[Task]Koidula6'
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1595827961603196535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894594664689285093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 299.3, y: 2.3699708, z: 212.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1864786272471346505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894594664689285093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06049bf9a9406414ab4c704e7ee9da7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimapIcon: {fileID: 0}
+  entities:
+  - {fileID: 3186029285154905438, guid: 8558ff4d11e5fd14db6dee60f3ac6077, type: 3}
+  - {fileID: 2887583432325646697, guid: 63e6c78e7ac489b4c93fae821be4a6d2, type: 3}
+  - {fileID: 2887583432325646697, guid: 6529fe93faf3b0140b22e45f03a1cfe7, type: 3}
+  - {fileID: 3186029285154905438, guid: 6713f4cc74306ff44a37781285970150, type: 3}
+  - {fileID: 3186029285154905438, guid: b38d03a450d974747b0546395fec134b, type: 3}
+  - {fileID: 6829815671165996625, guid: 53e0fca77eb718d498d590410456c117, type: 3}
+  - {fileID: 6829815671165996625, guid: afe33b60e38896843b4407fb9ecd00d0, type: 3}
+--- !u!65 &5620008034700184511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894594664689285093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 2, z: 22.84}
+  m_Center: {x: 0, y: 0, z: 0}
